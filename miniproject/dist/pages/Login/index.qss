@@ -1,0 +1,71 @@
+.Login{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 750rpx;
+    height: 1205rpx;
+    -webkit-flex-direction:column;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+ }
+
+
+.Login Image{
+  width : 100%;
+  height : 100%; 
+  position: fixed;
+  z-index: -1; 
+  background-size: 100% 100%;
+  opacity: 0.3;
+  
+}
+
+
+.header{
+    font-size: 68rpx;
+    text-align: center;
+    margin-bottom: 200rpx;
+}
+
+
+.header Text{
+    color: #605757;
+    text-shadow:3rpx 4rpx 5rpx #BFBEBD;
+}
+
+
+.passWord Input{
+    width: 400rpx;
+    height: 75rpx;
+    margin-left: 175rpx;
+    font-size: 30rpx;
+    padding-left: 40rpx;
+    border-radius: 40rpx;
+    border: 1rpx solid rgb(159, 158, 158);
+    background-color: white;
+}
+
+
+.passWord .input1{
+    margin-bottom: 55rpx;
+}
+
+
+.passWord .input2{
+    margin-bottom: 70rpx;
+}
+
+
+.btn1{
+    width: 175rpx;
+    height: 70rpx;
+    color:#6c6c6c;
+    font-size: 40rpx;
+    text-align: center;
+    line-height: 60rpx;
+    border-radius: 20rpx;
+    background-color: #FEE53A;
+}

@@ -1,0 +1,30 @@
+.ground{
+    background-color: bisque;
+    width: 750px;
+    height: 1100px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.ground .header{
+    width: 750px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+}
+.ground .header input{
+    border: 1px solid #AAAAAA;
+    width: 500px;
+    height: 34px;
+    margin-left: 80px;
+    margin-top: 40px;
+    border-radius: 50px;
+    padding-left: 30px;
+}
+.show{
+    background-color: cornflowerblue;
+    width: 700px;
+    height: auto;
+    
+}
