@@ -4,7 +4,7 @@ import './index.css'
 
 
 export default class Index extends Component {
-    
+        
     componentWillMount () { }
   
     componentDidMount () { }
@@ -14,7 +14,16 @@ export default class Index extends Component {
     componentDidShow () { }
   
     componentDidHide () { }
-  
+    
+    handleCancle=()=>{
+        this.props.changeHidden()
+    }
+
+    handleConfirm=()=>{
+        /* const {QQ} =e.target.value */
+        //传输数据
+        this.props.changeHidden()
+    }
 
     render () {
     const{hidden}=this.props
@@ -33,10 +42,10 @@ export default class Index extends Component {
             </View>
             <View class='toast-button'>
                 <View class='button1'>
-                    <Button catchtap='cancel'>取消</Button>
+                    <Button catchtap='cancel' onClick={this.handleCancle} >取消</Button>
                 </View>
                 <View class='button2'>
-                    <Button catchtap='confirm'>确定</Button>
+                    <Button catchtap='confirm' onClick={this.handleConfirm}>确定</Button>
                 </View>
             </View>
         </View>

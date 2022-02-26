@@ -27,11 +27,21 @@ export default class Index extends Component {
         url:'/pages/Square/Square'
       })
     }
+
     showModal=()=>{
       const ifHidden=this.state.hidden
       const Hidden=!ifHidden
       this.setState({hidden:Hidden})
     }
+
+    changeHidden=()=>{
+      const ifHidden=this.state.hidden
+      const Hidden=!ifHidden
+      this.setState({hidden:Hidden})
+    }
+
+
+
     render () {
       const {name,hidden} =this.state
       return (
@@ -53,7 +63,7 @@ export default class Index extends Component {
               ></Image>
             </View>
             <Button onClick={this.showModal} >我想要</Button>
-            <Modal hidden={hidden} />
+            <Modal hidden={hidden} changeHidden={this.changeHidden} />
         </View>
       </View>
         )
