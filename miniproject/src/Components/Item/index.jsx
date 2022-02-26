@@ -1,24 +1,45 @@
 import { View,Image,Text } from '@tarojs/components'
 import { Component } from 'react'
+import Taro from '@tarojs/taro'
+import avater from '../../Images/picture.png'
 import './index.css'
 
 export default class Index extends Component {
+      state={
+            name:'昵称',
+            price:'¥15',
+            message:'出一本大学生计算机基础，有圈画，有笔记，无破损！！！'
+      }
 
+      Todetail=()=>{
+        Taro.redirectTo({
+          url:'/pages/Goods-details/index'
+        })
+      }
      render() {
     /* const {price}=this.state */
-
+    const {name,price,message} = this.state
     return (
-      <View className='item'>
+      <View className='item' onClick={this.Todetail}>
         <View className='photo'>
             <Image 
-              src='https://bkimg.cdn.bcebos.com/pic/fcfaaf51f3deb48f63030127fe1f3a292cf578e5?x-bce-process=image/resize,m_lfit,w_536,limit_1/format,f_jpg'
+              src='https://static.easyhaitao.com/uploaded/https://img.alicdn.com/bao/uploaded/i1/1932014659/O1CN01g5HNPK1kHrxRcq1J4_!!0-item_pic.jpg_210x210.jpg'
             ></Image>
         </View>
         <View className='detail'>
-            <Text className='price'>¥15</Text>
-            <Text className='name'>大学生计算机基础</Text>
+            <Text className='price'>{price}</Text>
+            <View className='message'>
+            <Text>{message}</Text>
+            </View>
         </View>
-        <Text className='messge'>出一本大学生计算机基础，有圈画，有笔记</Text>
+        <View className='user'>
+            <View className='avater'>
+              <Image src={avater} /> {/* 暂时为默认头像，后续接受用户信息 */}
+              </View>
+              {/* <View className='name'> */}
+              <Text>{name}</Text>
+             {/*  </View> */}
+        </View>
       </View>
     )
   }

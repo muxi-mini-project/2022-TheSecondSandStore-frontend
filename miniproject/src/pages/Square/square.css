@@ -1,5 +1,5 @@
 .ground{
-    background-color: bisque;
+   /*  background-color: bisque; */
     width: 750px;
     height: 1100px;
     display: flex;
@@ -23,8 +23,15 @@
     padding-left: 30px;
 }
 .show{
-    background-color: cornflowerblue;
-    width: 700px;
+   /*  background-color: cornflowerblue; */
+    width: 650px;
     height: auto;
-    
+    margin-left: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    justify-content: space-between;
+    padding-left: 20px;
+    margin-top: 50px;
 }
