@@ -1,0 +1,66 @@
+.AddGoods_container{
+  width: 700px;
+  height: 770px;
+  border: 1px solid grey;
+  margin: 0 25px 0 25px;
+}
+.AddGoods_container>View{
+  width: 700px;
+  display: flex;
+}
+.AddGoods_container>View>Image{
+  width: 150px;
+  height: 150px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  margin: 30px 0 0 30px;
+}
+.AddGoods_textarea{
+  width: 700px;
+  height: 500px;
+}
+.AddGoods_tag{
+  width: 165px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #f1f1f1;
+  font-size: 40px;
+  line-height: 50px;
+  margin-left: 30px;
+}
+.AddGoods_addimg {
+  width: 150px;
+  height: 150px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  margin: 30px 0 0 30px;
+  position: relative;
+  color: grey;
+}
+.AddGoods_addimg::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80px;
+  transform:translate(-50%, -50%);
+  border-top: 2px solid;
+}
+.AddGoods_addimg::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 80px;
+  transform: translate(-50%,-50%);
+  border-left: 2px solid;
+}
+.AddGoods_sell{
+  background-color: #fee53a;
+  width: 180px;
+  height: 70px;
+  border-radius: 20px;
+  line-height: 70px;
+  font-size: 45px;
+  margin-top: 200px;
+}
