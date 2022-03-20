@@ -1,0 +1,67 @@
+.top{
+    display: flex;
+    margin-bottom: 20px;
+}
+ 
+.header{
+    display: flex;
+    align-items: center;
+}
+.avater Image{
+     display:inline-block;
+     width: 100px;
+     height: 100px;
+     border-radius: 100px;
+     margin-left: 30px;
+ }
+ 
+ .header .name{
+     display:inline-block;
+     font-size: 35px;
+     margin-left: 40px;
+     color: black;
+ }
+ .header .time{
+     display: inline-block;
+     font-size: 25px;
+     margin-left: 20px;
+     color: rgb(98, 98, 98);
+ }
+
+ /* .header .favorite{
+     width: 40px;
+     height: 40px;
+     display: inline-block;
+     margin-right: 50px;
+ } */
+ .description{
+     width: 450px;
+     height: auto;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     margin-left: 150px;
+ }
+ .description .price{
+     font-size: 50px;
+     color: rgb(253, 76, 76);
+ }
+.description .message{
+    font-size: 30px;
+    color:rgb(98, 98, 98);
+}
+.description .photo{
+    margin: 0 auto;
+}
+.description Image{
+    width: 450px;
+    height: 500px;
+    margin-top: 20px;
+    border-radius: 40px;
+}
+.description Button{
+    background-color: #FEE53A;
+    color: #707070;
+    border-radius: 15px;
+    margin: 40px auto 0 auto;
+}
