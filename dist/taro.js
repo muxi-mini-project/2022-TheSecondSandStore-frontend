@@ -8936,7 +8936,7 @@ function equipCommonApis(taro, global) {
   !*** ./node_modules/@tarojs/taro/index.js ***!
   \********************************************/
 /*! no static exports found */
-/*! exports used: default, initPxTransform */
+/*! exports used: default, getCurrentInstance, initPxTransform */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _require = __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/runtime/dist/runtime.esm.js"),

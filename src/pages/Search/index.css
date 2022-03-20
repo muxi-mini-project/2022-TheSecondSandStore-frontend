@@ -10,6 +10,11 @@
     display: flex;
     flex-direction: row;
 }
+.box {
+    display: flex;
+    flex-direction: row;
+
+}
 .History{
     width: 500px;
     max-height:160px;
@@ -23,12 +28,27 @@
 }
 .search-history{
     font-size: 30px;
-    color: #7e7e7e;
+    color: #FEE53A;
     width: fit-content;
     height: min-content;
-    background-color: #d8d8d8;
+    background-color: #fffbe0;
+    /* text-shadow:1px 1px 1px #d7bc10; */
     border-radius: 15px;
     padding: 5px;
     margin: 20px;
 }
 
+.show{
+    /*  background-color: cornflowerblue; */
+     width: 650px;
+     height: auto;
+     margin-left: 25px;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     gap: 20px 20px;
+     justify-content: space-between;
+     padding-left: 20px;
+     margin-top: 50px;
+ }
+ 

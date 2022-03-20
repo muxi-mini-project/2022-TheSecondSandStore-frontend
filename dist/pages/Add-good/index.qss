@@ -1,1 +1,19 @@
 
+.photo {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0 auto;
+    width: 450rpx;
+    height: 500rpx;
+    overflow: hidden;
+
+}
+.photo Image{
+    width: 450rpx;
+    height: 500rpx;
+    border-radius: 40rpx;
+}

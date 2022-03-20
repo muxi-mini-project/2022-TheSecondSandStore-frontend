@@ -330,6 +330,40 @@ exports.unstable_wrapCallback=function(a){var b=P;return function(){var c=P;P=b;
 
 /***/ }),
 
+/***/ "./node_modules/webpack/buildin/module.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if (!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+
 /***/ "./src/app.css":
 /*!*********************!*\
   !*** ./src/app.css ***!
@@ -370,7 +404,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var config = {"pages":["pages/Login/index","pages/Square/Square","pages/Goods-details/index","pages/Search/index","pages/Add-good/index","pages/Homepage/index"],"window":{"backgroundTextStyle":"light","navigationBarBackgroundColor":"#fff","navigationBarTitleText":"QQ","navigationBarTextStyle":"black","onReachBottomDistance":0,"enablePullDownRefresh":true},"tabBar":{"list":[{"pagePath":"pages/Square/Square","text":"主页","iconPath":"./Images/ground.png","selectedIconPath":"./Images/selected-ground.png"},{"pagePath":"pages/Add-good/index","text":"  ","iconPath":"./Images/add.png","selectedIconPath":"./Images/add.png"},{"pagePath":"pages/Homepage/index","text":"我的","iconPath":"./Images/home.png","selectedIconPath":"./Images/selected-home.png"}],"backgroundColor":"#FFFFFF"}};
+var config = {"pages":["pages/Square/Square","pages/Search/index","pages/Login/index","pages/Add-good/index","pages/Goods-details/index","pages/Homepage/index"],"window":{"backgroundTextStyle":"dark","navigationBarBackgroundColor":"#fff","navigationBarTitleText":"QQ","navigationBarTextStyle":"black","onReachBottomDistance":0,"enablePullDownRefresh":true,"backgroundColor":"#fff"},"tabBar":{"list":[{"pagePath":"pages/Square/Square","text":"主页","iconPath":"./Images/ground.png","selectedIconPath":"./Images/selected-ground.png"},{"pagePath":"pages/Add-good/index","text":"  ","iconPath":"./Images/add.png","selectedIconPath":"./Images/add.png"},{"pagePath":"pages/Homepage/index","text":"我的","iconPath":"./Images/home.png","selectedIconPath":"./Images/selected-home.png"}],"backgroundColor":"#FFFFFF"}};
 _tarojs_runtime__WEBPACK_IMPORTED_MODULE_1__["window"].__taroAppConfig = config
 var inst = App(Object(_tarojs_plugin_framework_react_dist_runtime__WEBPACK_IMPORTED_MODULE_2__[/* createReactApp */ "a"])(_node_modules_babel_loader_lib_index_js_app_js__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], react__WEBPACK_IMPORTED_MODULE_5__, react_dom__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"], config))
 

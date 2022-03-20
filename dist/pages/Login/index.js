@@ -25,8 +25,13 @@
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _Images_background_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Images/background.png */ "./src/Images/background.png");
 /* harmony import */ var _Images_background_png__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_Images_background_png__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _Images_1_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Images/字体1.png */ "./src/Images/字体1.png");
+/* harmony import */ var _Images_1_png__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_Images_1_png__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _Service_fetch__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../Service/fetch */ "./src/Service/fetch.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__);
+
+
 
 
 
@@ -54,18 +59,53 @@ var Index = /*#__PURE__*/function (_Component) {
     _this = _super.apply(this, arguments);
 
     Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_this), "login", function () {
-      var userid = _this.state.userid;
-      var pwd = _this.state.pwd;
-      console.log(pwd, userid);
-      _tarojs_taro__WEBPACK_IMPORTED_MODULE_8___default.a.reLaunch({
-        url: '/pages/Square/Square'
-      });
-      /* Service.Login_ccnu(userid, pwd)  */
+      var _this$state = _this.state,
+          account = _this$state.account,
+          password = _this$state.password;
+
+      if (account && password) {
+        Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_12__[/* default */ "a"])('/api/v1/auth', {
+          account: account,
+          password: password
+        }, 'POST').then(function (res) {
+          switch (res.code) {
+            case 200:
+              _tarojs_taro__WEBPACK_IMPORTED_MODULE_8___default.a.setStorage({
+                key: 'account',
+                data: account
+              });
+              _tarojs_taro__WEBPACK_IMPORTED_MODULE_8___default.a.setStorage({
+                key: 'password',
+                data: password
+              });
+              _tarojs_taro__WEBPACK_IMPORTED_MODULE_8___default.a.setStorage({
+                key: 'token',
+                data: res.data
+              });
+              _tarojs_taro__WEBPACK_IMPORTED_MODULE_8___default.a.reLaunch({
+                url: '/pages/Square/Square'
+              });
+              break;
+          }
+        }).catch(function () {
+          _tarojs_taro__WEBPACK_IMPORTED_MODULE_8___default.a.showToast({
+            icon: 'none',
+            title: '账号或者密码错误'
+          });
+        });
+      }
+
+      if (!account || !password) {
+        _tarojs_taro__WEBPACK_IMPORTED_MODULE_8___default.a.showToast({
+          icon: 'none',
+          title: '账号或密码不能为空'
+        });
+      }
     });
 
     _this.state = {
-      userid: '',
-      pwd: ''
+      account: '',
+      password: ''
     };
     return _this;
   }
@@ -74,58 +114,51 @@ var Index = /*#__PURE__*/function (_Component) {
     key: "getuserid",
     value: function getuserid(e) {
       this.setState({
-        userid: e.target.value
+        account: e.target.value
       });
-      console.log(this.state.userid);
     }
   }, {
     key: "getpwd",
     value: function getpwd(e) {
       this.setState({
-        pwd: e.target.value
+        password: e.target.value
       });
-      console.log(this.state.pwd);
     }
+    /* login = async () => {
+        const {account,password} = this.state;
+        if (account && password ) {
+          const res = await login(account, password)
+          switch (res)
+        } */
+
   }, {
     key: "render",
-    value:
-    /* componentWillMount () { }
-     componentDidMount () { }
-       componentWillUnmount () { }
-       componentDidShow () { }
-       componentDidHide () { }
-    */
-
-    /* login = ()=>{
-      Taro.reLaunch({
-        url: '/pages/Square/Square'})
-    } */
-    function render() {
-      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+    value: function render() {
+      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
         className: "Login",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
           src: _Images_background_png__WEBPACK_IMPORTED_MODULE_10___default.a
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
           className: "header",
-          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
-            children: "\u6B22\u8FCE\u5149\u4E34\u5E97\u5C0F\u8D30"
+          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
+            src: _Images_1_png__WEBPACK_IMPORTED_MODULE_11___default.a
           })
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
           className: "passWord",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Input */ "c"], {
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Input */ "c"], {
             type: "number",
             placeholder: "\u8BF7\u8F93\u5165\u60A8\u7684\u5B66\u53F7",
             className: "input1",
-            onChange: this.getuserid.bind(this)
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Input */ "c"], {
+            onInput: this.getuserid.bind(this)
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Input */ "c"], {
             type: "password",
             password: true,
             placeholder: "\u5BC6\u7801",
             className: "input2",
-            onChange: this.getpwd.bind(this)
+            onInput: this.getpwd.bind(this)
           })]
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
-          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Button */ "a"], {
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Button */ "a"], {
             className: "btn1",
             onClick: this.login,
             children: "\u767B\u5F55"
@@ -151,6 +184,18 @@ var Index = /*#__PURE__*/function (_Component) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "Images/background.png";
+
+/***/ }),
+
+/***/ "./src/Images/字体1.png":
+/*!****************************!*\
+  !*** ./src/Images/字体1.png ***!
+  \****************************/
+/*! no static exports found */
+/*! exports used: default */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "Images/字体1.png";
 
 /***/ }),
 
@@ -189,5 +234,5 @@ var inst = Page(Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageC
 
 /***/ })
 
-},[["./src/pages/Login/index.jsx","runtime","taro","vendors"]]]);
+},[["./src/pages/Login/index.jsx","runtime","taro","vendors","common"]]]);
 //# sourceMappingURL=index.js.map

@@ -17,14 +17,16 @@
   
 }
 .header{
-    font-size: 68px;
-    text-align: center;
-    margin-bottom: 200px;
+   width: 750px;
+   height: 200px;
+    margin-bottom: 100px;
 }
 
-.header Text{
-    color: #605757;
-    text-shadow:3px 4px 5px #BFBEBD;
+.header Image{
+    padding-left: 175px;
+    width: 800px;
+    height: 225px;
+    opacity: 1;
 }
 
 .passWord Input{

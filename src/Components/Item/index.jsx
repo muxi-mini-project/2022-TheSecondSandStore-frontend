@@ -1,46 +1,52 @@
 import { View,Image,Text } from '@tarojs/components'
 import { Component } from 'react'
-import Taro from '@tarojs/taro'
-import avater from '../../Images/picture.png'
+import Taro  from '@tarojs/taro'
+
+/* import avater from '../../Images/picture.png' */
 import './index.css'
 
 export default class Index extends Component {
-      state={
-            name:'昵称',
+      /* state={
+            userid:'昵称',
             price:'¥15',
-            message:'出一本大学生计算机基础，有圈画，有笔记，无破损！！！'
+            description:'出一本大学生计算机基础，有圈画，有笔记，无破损！！！'
+      } */
+
+      Todetail=(goods_id)=>{
+        Taro.redirectTo({
+          url:'/pages/Goods-details/index?goods_id='+goods_id
+        })
+        return 1
       }
 
-      Todetail=()=>{
-        Taro.redirectTo({
-          url:'/pages/Goods-details/index'
-        })
-      }
      render() {
-    /* const {price}=this.state */
-    const {name,price,message} = this.state
+    const {price,content,username,user_image,item_image,goods_id,if_sell,if_del}=this.props
+   
     return (
-      <View className='item' onClick={this.Todetail}>
+      <View>
+      {if_sell||if_del ? null : <View className='item' onClick={() => this.Todetail(goods_id)}>
         <View className='photo'>
             <Image 
-              src='https://static.easyhaitao.com/uploaded/https://img.alicdn.com/bao/uploaded/i1/1932014659/O1CN01g5HNPK1kHrxRcq1J4_!!0-item_pic.jpg_210x210.jpg'
+              src={`http://${item_image}`}
             ></Image>
         </View>
         <View className='detail'>
             <Text className='price'>{price}</Text>
             <View className='message'>
-            <Text>{message}</Text>
+            <Text>{content}</Text>
             </View>
         </View>
         <View className='user'>
             <View className='avater'>
-              <Image src={avater} /> {/* 暂时为默认头像，后续接受用户信息 */}
-              </View>
+              <Image src={`http://${user_image}`} /> {/* 暂时为默认头像，后续接受用户信息 */}
+            </View>
               {/* <View className='name'> */}
-              <Text>{name}</Text>
+              <Text>{username}</Text>
              {/*  </View> */}
         </View>
       </View>
+    }
+    </View>
     )
   }
 }

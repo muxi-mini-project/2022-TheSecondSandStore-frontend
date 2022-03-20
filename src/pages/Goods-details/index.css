@@ -1,3 +1,8 @@
+.top{
+    display: flex;
+    margin-bottom: 20px;
+}
+ 
 .header{
     display: flex;
     align-items: center;
@@ -10,18 +15,25 @@
      margin-left: 30px;
  }
  
- .header Text{
+ .header .name{
      display:inline-block;
      font-size: 35px;
      margin-left: 40px;
      color: black;
  }
- .header .favorite{
+ .header .time{
+     display: inline-block;
+     font-size: 25px;
+     margin-left: 20px;
+     color: rgb(98, 98, 98);
+ }
+
+ /* .header .favorite{
      width: 40px;
      height: 40px;
      display: inline-block;
-     margin-left: 400px;
- }
+     margin-right: 50px;
+ } */
  .description{
      width: 450px;
      height: auto;

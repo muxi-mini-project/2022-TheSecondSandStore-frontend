@@ -1,19 +1,25 @@
 export default ({
   pages: [
-    'pages/Login/index',
+   
     'pages/Square/Square',
-    'pages/Goods-details/index',
     'pages/Search/index',
+    'pages/Login/index',
     'pages/Add-good/index',
+    'pages/Goods-details/index',
+    /* 'pages/Goods-details/index', */
+    
+    /* 'pages/Add-good/index', */
     'pages/Homepage/index',
   ],
   window: {
-    backgroundTextStyle: 'light',
+    backgroundTextStyle: 'dark',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'QQ',
     navigationBarTextStyle: 'black',
     onReachBottomDistance: 0,
     enablePullDownRefresh:true,
+    backgroundColor:'#fff'
+
   },
   tabBar: {
     list: [

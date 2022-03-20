@@ -23,15 +23,16 @@
 /* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_tarojs_taro__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./index.css */ "./src/pages/Goods-details/index.css");
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _Images_picture_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Images/picture.png */ "./src/Images/picture.png");
-/* harmony import */ var _Images_picture_png__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_Images_picture_png__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _Service_fetch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Service/fetch */ "./src/Service/fetch.jsx");
 /* harmony import */ var _Images_favorite_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Images/favorite.png */ "./src/Images/favorite.png");
 /* harmony import */ var _Images_favorite_png__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_Images_favorite_png__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _Images_back_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../Images/back.png */ "./src/Images/back.png");
-/* harmony import */ var _Images_back_png__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_Images_back_png__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _Components_Modal__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../Components/Modal */ "./src/Components/Modal/index.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _Images_favorited_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../Images/favorited.png */ "./src/Images/favorited.png");
+/* harmony import */ var _Images_favorited_png__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_Images_favorited_png__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _Images_back_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../Images/back.png */ "./src/Images/back.png");
+/* harmony import */ var _Images_back_png__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_Images_back_png__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _Components_Modal1__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../Components/Modal1 */ "./src/Components/Modal1/index.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__);
 
 
 
@@ -41,6 +42,9 @@
 
 
 
+
+
+/* import avater from '../../Images/picture.png' */
 
 
 
@@ -66,8 +70,16 @@ var Index = /*#__PURE__*/function (_Component) {
     _this = _super.call.apply(_super, [this].concat(args));
 
     Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_this), "state", {
-      name: '昵称',
-      hidden: true
+      good: {},
+
+      /* name:'昵称', */
+      hidden: true,
+      place: '客官，请联系这个QQ号',
+      iffavorite: false
+      /* QQ:'123456', */
+
+      /* iffavorite:false */
+
     });
 
     Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_this), "handleBack", function () {
@@ -94,6 +106,28 @@ var Index = /*#__PURE__*/function (_Component) {
       });
     });
 
+    Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_this), "handlefavorite", function () {
+      var collect = _this.state.iffavorite;
+      var Favorite = !collect;
+      var collection_id = _this.state.good.id;
+
+      _this.setState({
+        iffavorite: Favorite
+      });
+
+      if (Favorite) {
+        Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])("/api/v1/collection", {
+          goods_id: collection_id
+        }, 'GET').then(function (res) {
+          console.log(res);
+        });
+      } else {
+        Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])("/api/v1/collection/".concat(collection_id), {}, 'DELETE').then(function (res) {
+          console.log(res);
+        });
+      }
+    });
+
     return _this;
   }
 
@@ -108,7 +142,21 @@ var Index = /*#__PURE__*/function (_Component) {
     value: function componentWillUnmount() {}
   }, {
     key: "componentDidShow",
-    value: function componentDidShow() {}
+    value: function componentDidShow() {
+      var _this2 = this;
+
+      var params = Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_8__["getCurrentInstance"])();
+      var id = params.router.params;
+      var goods_id = id.goods_id;
+      Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])("/api/v1/goods/details/one/".concat(goods_id), {}, 'GET').then(function (res) {
+        console.log(res.data);
+
+        _this2.setState({
+          good: res.data,
+          iffavorite: res.data.if_collected
+        });
+      });
+    }
   }, {
     key: "componentDidHide",
     value: function componentDidHide() {}
@@ -116,49 +164,75 @@ var Index = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$state = this.state,
-          name = _this$state.name,
-          hidden = _this$state.hidden;
-      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
-          src: _Images_back_png__WEBPACK_IMPORTED_MODULE_12___default.a,
-          style: {
-            width: 20,
-            height: 20,
-            marginLeft: 20,
-            marginBottom: 20
-          },
-          onClick: this.handleBack
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
-          className: "header",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
-            className: "avater",
-            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
-              src: _Images_picture_png__WEBPACK_IMPORTED_MODULE_10___default.a
-            }), " "]
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
-            children: name
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
-            src: _Images_favorite_png__WEBPACK_IMPORTED_MODULE_11___default.a,
-            className: "favorite"
+          good = _this$state.good,
+          place = _this$state.place,
+          hidden = _this$state.hidden,
+          iffavorite = _this$state.iffavorite;
+      var name = good.user_nickname; //
+
+      var avater = good.user_image;
+      var QQ = good.qq_account; //
+
+      var price = good.price;
+      var content = good.content;
+      var item_image = good.goods_images_videos; //
+
+      var time = good.time;
+      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+          className: "top",
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
+            src: _Images_back_png__WEBPACK_IMPORTED_MODULE_13___default.a,
+            style: {
+              width: 20,
+              height: 20,
+              marginLeft: 20
+            },
+            onClick: this.handleBack
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
+            src: iffavorite ? _Images_favorited_png__WEBPACK_IMPORTED_MODULE_12___default.a : _Images_favorite_png__WEBPACK_IMPORTED_MODULE_11___default.a,
+            className: "favorite",
+            style: {
+              width: 22,
+              height: 22,
+              marginLeft: 290
+            },
+            onClick: this.handlefavorite
           })]
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+          className: "header",
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+            className: "avater",
+            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
+              src: "http://".concat(avater)
+            }), " "]
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
+            className: "name",
+            children: name
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
+            className: "time",
+            children: time
+          })]
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
           className: "description",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
             className: "price",
-            children: "\xA515"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
+            children: price
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
             className: "message",
-            children: "\u51FA\u4E00\u672C\u5927\u5B66\u751F\u8BA1\u7B97\u673A\u57FA\u7840\uFF0C\u6709\u5708\u753B\uFF0C\u6709\u7B14\u8BB0"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+            children: content
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
             className: "photo",
-            children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
-              src: "https://static.easyhaitao.com/uploaded/https://img.alicdn.com/bao/uploaded/i1/1932014659/O1CN01g5HNPK1kHrxRcq1J4_!!0-item_pic.jpg_210x210.jpg"
+            children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
+              src: "http://".concat(item_image)
             })
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Button */ "a"], {
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Button */ "a"], {
             onClick: this.showModal,
             children: "\u6211\u60F3\u8981"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_Components_Modal__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"], {
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_Components_Modal1__WEBPACK_IMPORTED_MODULE_14__[/* default */ "a"], {
             hidden: hidden,
+            place: place,
+            QQ: QQ,
             changeHidden: this.changeHidden
           })]
         })]
@@ -173,10 +247,10 @@ var Index = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ "./src/Components/Modal/index.css":
-/*!****************************************!*\
-  !*** ./src/Components/Modal/index.css ***!
-  \****************************************/
+/***/ "./src/Components/Modal1/index.css":
+/*!*****************************************!*\
+  !*** ./src/Components/Modal1/index.css ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -184,10 +258,10 @@ var Index = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ "./src/Components/Modal/index.jsx":
-/*!****************************************!*\
-  !*** ./src/Components/Modal/index.jsx ***!
-  \****************************************/
+/***/ "./src/Components/Modal1/index.jsx":
+/*!*****************************************!*\
+  !*** ./src/Components/Modal1/index.jsx ***!
+  \*****************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -203,7 +277,7 @@ var Index = /*#__PURE__*/function (_Component) {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index.css */ "./src/Components/Modal/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index.css */ "./src/Components/Modal1/index.css");
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/cjs/react-jsx-runtime.production.min.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__);
@@ -239,12 +313,6 @@ var Index = /*#__PURE__*/function (_Component) {
       _this.props.changeHidden();
     });
 
-    Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_this), "handleConfirm", function () {
-      /* const {QQ} =e.target.value */
-      //传输数据
-      _this.props.changeHidden();
-    });
-
     return _this;
   }
 
@@ -265,8 +333,16 @@ var Index = /*#__PURE__*/function (_Component) {
     value: function componentDidHide() {}
   }, {
     key: "render",
-    value: function render() {
-      var hidden = this.props.hidden;
+    value:
+    /* handleConfirm=()=>{
+        
+        this.props.changeHidden()
+    } */
+    function render() {
+      var _this$props = this.props,
+          hidden = _this$props.hidden,
+          place = _this$props.place,
+          QQ = _this$props.QQ;
       return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
         children: hidden ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
           class: "toast-box",
@@ -277,34 +353,16 @@ var Index = /*#__PURE__*/function (_Component) {
             children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
               class: "toast-title",
               children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
-                children: "\u5BA2\u5B98"
-              })
-            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
-              class: "toast-main",
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
-                class: "toast-input",
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Input */ "c"], {
-                  placeholder: "\u8BF7\u7559\u4E0B\u4F60\u7684QQ\u53F7",
-                  bindinput: "setValue",
-                  "data-name": "stuEidtName"
-                })
+                onClick: this.handleCancle,
+                children: "\xD7"
               })
             }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
-              class: "toast-button",
+              class: "toast-main",
               children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
-                class: "button1",
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Button */ "a"], {
-                  catchtap: "cancel",
-                  onClick: this.handleCancle,
-                  children: "\u53D6\u6D88"
-                })
-              }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
-                class: "button2",
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Button */ "a"], {
-                  catchtap: "confirm",
-                  onClick: this.handleConfirm,
-                  children: "\u786E\u5B9A"
-                })
+                class: "toast-show",
+                children: place
+              }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
+                children: QQ
               })]
             })]
           })]
@@ -329,6 +387,18 @@ var Index = /*#__PURE__*/function (_Component) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "Images/favorite.png";
+
+/***/ }),
+
+/***/ "./src/Images/favorited.png":
+/*!**********************************!*\
+  !*** ./src/Images/favorited.png ***!
+  \**********************************/
+/*! no static exports found */
+/*! exports used: default */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "Images/favorited.png";
 
 /***/ }),
 

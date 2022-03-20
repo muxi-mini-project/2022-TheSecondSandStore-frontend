@@ -1,25 +1,52 @@
 import { Component } from 'react'
 import { View, Text,Image, Button } from '@tarojs/components'
-import Taro from '@tarojs/taro'
+import Taro,{getCurrentInstance} from '@tarojs/taro'
 import './index.css'
-import avater from '../../Images/picture.png'
+import Fetch from '../../Service/fetch'
+/* import avater from '../../Images/picture.png' */
 import favorite from '../../Images/favorite.png'
+import favorited from '../../Images/favorited.png'
 import back from '../../Images/back.png'
-import Modal from '../../Components/Modal'
+import Modal from '../../Components/Modal1'
 
 export default class Index extends Component {
+  
     state={
-       name:'昵称', 
-       hidden:true
-} 
+      good:{},
+       /* name:'昵称', */ 
+       hidden:true,
+       place:'客官，请联系这个QQ号',
+       iffavorite:false,
+       /* QQ:'123456', */
+       /* iffavorite:false */
+    } 
     componentWillMount () { }
   
     componentDidMount () { }
   
     componentWillUnmount () { }
-  
-    componentDidShow () { }
-  
+     
+   
+    componentDidShow () { 
+      const params = getCurrentInstance()
+      const id = params.router.params
+      const goods_id = id.goods_id
+      Fetch(
+        `/api/v1/goods/details/one/${goods_id}`,
+        {},
+        'GET'
+      )
+    .then(res => {
+      console.log(res.data);
+      this.setState({
+        good : res.data,
+        iffavorite: res.data.if_collected
+      });
+    })
+
+  }
+
+
     componentDidHide () { }
   
     handleBack=()=>{
@@ -40,30 +67,73 @@ export default class Index extends Component {
       this.setState({hidden:Hidden})
     }
 
+    handlefavorite=()=>{
+      const collect = this.state.iffavorite
+      const Favorite = !collect
+      const collection_id = this.state.good.id
+      this.setState({iffavorite:Favorite}); 
+      if(Favorite)
+      {
+        Fetch(
+        `/api/v1/collection`,
+          {
+            goods_id:collection_id
+          },
+          'GET'
+        )
+        .then(res => {
+          console.log(res);
+        })
+      }
+      else
+      {
+        Fetch(
+          `/api/v1/collection/${collection_id}`,
+          {},
+          'DELETE'
+        )
+        .then(res => {
+          console.log(res);
+        })
+        
+      }
+    }
+
 
 
     render () {
-      const {name,hidden} =this.state
+      const {good,place,hidden,iffavorite} =this.state
+      const name= good.user_nickname//
+      const avater = good.user_image 
+      const QQ = good.qq_account//
+      const price = good.price
+      const content = good.content
+      const item_image = good.goods_images_videos//
+      const time = good.time
+
       return (
       <View>
-        <Image src={back} style={{width:20,height:20,marginLeft:20,marginBottom:20}} onClick={this.handleBack} />
+        <View className='top'>
+        <Image src={back} style={{width:20,height:20,marginLeft:20}} onClick={this.handleBack} />
+        <Image src={iffavorite?favorited:favorite} className='favorite'style={{ width: 22,height: 22,marginLeft:290}} onClick={this.handlefavorite} ></Image>
+        </View>
         <View className='header'>
              <View className='avater'>
-              <Image src={avater} /> {/* 暂时为默认头像，后续接受用户信息 */}
+              <Image src={`http://${avater}`} /> {/* 暂时为默认头像，后续接受用户信息 */}
               </View>
-              <Text>{name}</Text>
-              <Image src={favorite} className='favorite'></Image>
+              <Text className='name'>{name}</Text>
+              <Text className='time'>{time}</Text>
         </View>
         <View className='description'>
-            <Text className='price'>¥15</Text>
-            <Text className='message'>出一本大学生计算机基础，有圈画，有笔记</Text>
+            <Text className='price'>{price}</Text>
+            <Text className='message'>{content}</Text>
             <View className='photo'>
               <Image 
-                src='https://static.easyhaitao.com/uploaded/https://img.alicdn.com/bao/uploaded/i1/1932014659/O1CN01g5HNPK1kHrxRcq1J4_!!0-item_pic.jpg_210x210.jpg'
+                src={`http://${item_image}`}
               ></Image>
             </View>
             <Button onClick={this.showModal} >我想要</Button>
-            <Modal hidden={hidden} changeHidden={this.changeHidden} />
+            <Modal hidden={hidden} place={place} QQ={QQ} changeHidden={this.changeHidden} />
         </View>
       </View>
         )

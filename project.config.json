@@ -4,7 +4,7 @@
 	"description": "店小贰",
 	"appid": "touristappid",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": false,
 		"postcss": false,
 		"minified": false,
@@ -18,6 +18,10 @@
 	},
 	"compileType": "miniprogram",
 	"qqappid": "1108100302",
-	"scripts": {},
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
 	"condition": {}
 }
