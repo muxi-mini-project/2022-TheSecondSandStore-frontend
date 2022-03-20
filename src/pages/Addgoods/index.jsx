@@ -2,7 +2,7 @@ import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Textarea, Button, Image } from '@tarojs/components'
 import './index.css'
-import Modal1 from '../../Components/Modal1'
+import Modal3 from '../../Components/Modal3'
 import Fetch from '../../Service/fetch'
 
 export default class Index extends Component {
@@ -75,7 +75,7 @@ export default class Index extends Component {
           </View>
         </View>
         <Button className='AddGoods_sell' onClick={this.showModal}>发布</Button>
-        <Modal1 hidden={this.state.hidden} changeHidden={this.changeHidden} text={this.state.text} place={this.state.place} maxlength='10' />
+        <Modal3 hidden={this.state.hidden} changeHidden={this.changeHidden} text={this.state.text} place={this.state.place} maxlength='10' />
       </View>
     )
   }

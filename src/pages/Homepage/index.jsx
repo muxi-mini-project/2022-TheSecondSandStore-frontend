@@ -4,7 +4,7 @@ import { View, Text, Image } from '@tarojs/components'
 import './index.css'
 import favourite from '../../Images/favourite.png'
 import lists from '../../Images/lists.png'
-import Modal1 from '../../Components/Modal1'
+import Modal3 from '../../Components/Modal3'
 import Fetch from '../../Service/fetch'
 
 export default class index extends Component {
@@ -76,7 +76,7 @@ export default class index extends Component {
           <Text>我收藏的</Text>
         </View>
         <View className='Homepage_feedback' onClick={this.showModal}>意见反馈</View>
-        <Modal1 hidden={this.state.hidden} changeHidden={this.changeHidden} text={this.state.text} place={this.state.place} />
+        <Modal3 hidden={this.state.hidden} changeHidden={this.changeHidden} text={this.state.text} place={this.state.place} />
       </View>
     )
   }
