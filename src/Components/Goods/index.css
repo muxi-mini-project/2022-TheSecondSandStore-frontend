@@ -1,0 +1,64 @@
+.goods_container {
+  width: 750px;
+  box-shadow: 0px 10px 10px grey;
+  padding: 50px 75px 80px 75px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.goods_name {
+  width: 600px;
+  font-size: 50px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+.goods_img {
+  width: 300px;
+  height: 300px;
+  background-color: #707070;
+  display: flex;
+}
+.goods_box {
+  width: 280px;
+  height: 300px;
+  display: flex;
+  margin-left: 20px;
+  flex-wrap: wrap;
+}
+.goods_introduction {
+  font-size: 40px;
+  height: 250px;
+  width: 280px;
+}
+.goods_state {
+  font-size: 35px;
+  height: 40px;
+  width: 280px;
+  display: flex;
+  /* background-color: #000; */
+}
+.goods_sell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 155px;
+  height: 40px;
+  font-size: 30px;
+  padding: 0;
+  background-color: #fee53a;
+}
+.goods_del {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 135px;
+  height: 40px;
+  font-size: 30px;
+  padding: 0;
+  background-color: #fee53a;
+}
+.goods_sel{
+  height: 40px;
+  width: 280px;
+  display: flex;
+}
