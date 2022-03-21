@@ -3,7 +3,7 @@ import { View, Text,Image, Button } from '@tarojs/components'
 import Taro,{getCurrentInstance} from '@tarojs/taro'
 import './index.css'
 import Fetch from '../../Service/fetch'
-/* import avater from '../../Images/picture.png' */
+import Showphoto from '../../Components/Showphoto'
 import favorite from '../../Images/favorite.png'
 import favorited from '../../Images/favorited.png'
 import back from '../../Images/back.png'
@@ -22,12 +22,13 @@ export default class Index extends Component {
     } 
     componentWillMount () { }
   
-    componentDidMount () { }
+    componentDidMount () {}
   
     componentWillUnmount () { }
      
    
     componentDidShow () { 
+      console.log(111)
       const params = getCurrentInstance()
       const id = params.router.params
       const goods_id = id.goods_id
@@ -37,7 +38,6 @@ export default class Index extends Component {
         'GET'
       )
     .then(res => {
-      console.log(res.data);
       this.setState({
         good : res.data,
         iffavorite: res.data.if_collected
@@ -102,6 +102,7 @@ export default class Index extends Component {
 
 
     render () {
+      console.log(222)
       const {good,place,hidden,iffavorite} =this.state
       const name= good.user_nickname//
       const avater = good.user_image 
@@ -127,11 +128,14 @@ export default class Index extends Component {
         <View className='description'>
             <Text className='price'>{price}</Text>
             <Text className='message'>{content}</Text>
-            <View className='photo'>
+
+            <Showphoto item_image={item_image} />
+
+           {/*  <View className='photo'>
               <Image 
-                src={`http://${item_image}`}
+                src={`http://${item_image ? item_image[0] : null}`}
               ></Image>
-            </View>
+            </View> */}
             <Button onClick={this.showModal} >我想要</Button>
             <Modal hidden={hidden} place={place} QQ={QQ} changeHidden={this.changeHidden} />
         </View>
