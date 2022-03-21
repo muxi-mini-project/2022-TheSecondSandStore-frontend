@@ -1,15 +1,15 @@
 export default ({
   pages: [
-   
+    'pages/Login/index',
     'pages/Square/Square',
     'pages/Search/index',
-    'pages/Login/index',
-    'pages/Add-good/index',
+    'pages/Addgoods/index',
     'pages/Goods-details/index',
-    /* 'pages/Goods-details/index', */
-    
-    /* 'pages/Add-good/index', */
     'pages/Homepage/index',
+    'pages/changeUserinfo/index',
+    'pages/Favourites/index',
+    'pages/Lists/index',
+    'pages/Tags/index',
   ],
   window: {
     backgroundTextStyle: 'dark',
@@ -30,8 +30,8 @@ export default ({
         selectedIconPath: './Images/selected-ground.png'
       },
       {
-        pagePath: 'pages/Add-good/index',
-        text:'  ',
+        pagePath: 'pages/Addgoods/index',
+        text:'发布',
         iconPath: './Images/add.png',
         selectedIconPath: './Images/add.png',
 

@@ -83,7 +83,7 @@ export default class Square extends Component {
       <View className='ground'>
         <View className='header'>
            <Input type='text' placeholder='' onClick={this.Toresearch} />
-           <Image src={`http://${image}`} style={{width:32,height:32,marginTop:20}} />
+           <Image src={image} style={{width:32,height:32,marginTop:20}} />
         </View>
         <View className='show'>
           {goods.map((good) => {
