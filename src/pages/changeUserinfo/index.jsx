@@ -1,18 +1,27 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Button, Image, Form, Input } from '@tarojs/components'
+import { View, Button, Image, Input } from '@tarojs/components'
 import './index.css'
 import Fetch from '../../Service/fetch'
 
 export default class Index extends Component {
 
   state = {
-    avatar: '',
-    username: ''
+    user: [],
+    image: '',
+    nickname: ''
+  }
+
+  componentDidMount() {
+    Fetch(`/user`, {}, 'GET')
+      .then(res => {
+        if (res.data) {
+          this.setState({ user: res.data })
+        }
+      })
   }
 
   changeAvater = () => {
-    const { avatar } = this.state
     const params = {};
     params.count = 1;
     params.sizeType = ['original', 'compressed'];
@@ -22,12 +31,10 @@ export default class Index extends Component {
         const { tempFilePaths } = res
         const file = Taro.getFileSystemManager().readFileSync(tempFilePaths[0], "base64")
         this.setState({
-          avatar: file,
+          tempavatar: tempFilePaths[0],
+          image: file,
         });
       })
-      .then(
-        Fetch(`/user/image`, { avatar }, 'PUT')
-      )
       .catch(error => {
         console.error(error);
       });
@@ -35,59 +42,69 @@ export default class Index extends Component {
 
   changeName = (e) => {
     this.setState({
-      username: e.target.value
+      nickname: e.target.value
     });
   }
 
+  cleartemp = () => {
+    this.setState({
+      tempavatar: ''
+    })
+  }
+
+  handleinfo = () => {
+    const { image, nickname } = this.state
+    Fetch(`/user/image`, { image }, 'PUT')
+    Fetch(`/user/nickname`, { nickname }, 'PUT')
+    if (!nickname || !image) {
+      Taro.showToast({
+        icon: 'none',
+        title: '昵称或头像不能为空'
+      });
+    } else {
+      Taro.showToast({
+        icon: 'none',
+        title: '修改成功'
+      });
+    }
+  }
 
   render() {
-    const { avatar, username } = this.state
+    const { tempavatar, nickname, user } = this.state
     return (
       <View className='index'>
-        <Form
-          className='from'
-          onSubmit={this.onSubmit.bind(this)}
-          onReset={this.onReset.bind(this)}
-        >
-          <View className='from-content'>
-            <View className='avatar'>
-              <View>修改头像</View>
-              <Image
-                src={avatar}
-                // src="https://thirdqq.qlogo.cn/qqapp/1108100302/AEC7B0E25CBC86FC3098E2FC0FD5CD0D/100"
-                onClick={this.toChangeAvatar.bind(this)}
-                className='avatar-img'
-              ></Image>
-              <View className='icon-right'>
-              </View>
-            </View>
-            <View className='user-name'>
-              <View className='nick'>昵称</View>
-              <Input
-                maxLength='10'
-                className='nick-input'
-                placeholder='昵称'
-                placeholderClass='input-font'
-                value={username}
-                onChange={this.toChangeName.bind(this)}
-              // onFocus={this.handleFocus.bind(this)}
-              // onBlur={this.handleUnFocus.bind(this)}
-              // focus
-              />
-              {/* {!onfocus && <MxIcon type="cross"></MxIcon>} */}
-              <View className='icon-right'>
-              </View>
+        <View className='from-content'>
+          <View className='avatar'>
+            <View>修改头像</View>
+            <Image
+              src={tempavatar ? tempavatar : `http://${user.image}`}
+              onClick={this.changeAvater}
+              className='avatar-img'
+            ></Image>
+            <View className='icon-right'>
             </View>
           </View>
-          <View className='from-button'>
-            <Button formType='reset' className='reset-button'>
-              取消
-            </Button>
-            <Button formType='submit' className='submit-button'>
-              保存
-            </Button>
+          <View className='user-name'>
+            <View className='nick'>修改昵称</View>
+            <Input
+              maxLength='10'
+              className='nick-input'
+              placeholder='昵称'
+              value={nickname}
+              onInput={this.changeName}
+            />
+            <View className='icon-right'>
+            </View>
           </View>
-        </Form>
+        </View>
+        <View className='from-button'>
+          <Button className='reset-button' onClick={this.cleartemp}>
+            取消
+          </Button>
+          <Button className='submit-button' onClick={this.handleinfo}>
+            保存
+          </Button>
+        </View>
         {/* <View className='log-out' onClick={this.handleLogout.bind(this)}>
           退出登陆
         </View> */}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { View } from '@tarojs/components'
 import Tag from '../Tag/index.jsx'
 import './index.css'
