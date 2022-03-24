@@ -1,16 +1,15 @@
 export default ({
   pages: [
-    'pages/Square/Square',
     'pages/Login/index',
-   
+    'pages/Square/Square',
     'pages/Search/index',
     'pages/Addgoods/index',
     'pages/Goods-details/index',
-  /*   'pages/Homepage/index', */
-   /*  'pages/changeUserinfo/index',
+    'pages/Homepage/index',
+    'pages/changeUserinfo/index',
     'pages/Favourites/index',
     'pages/Lists/index',
-    'pages/Tags/index', */
+    'pages/Tags/index',
   ],
   window: {
     backgroundTextStyle: 'dark',
