@@ -13,21 +13,18 @@ export default class Index extends Component {
   
     state={
       good:{},
+      images:[],
        /* name:'昵称', */ 
        hidden:true,
        place:'客官，请联系这个QQ号',
        iffavorite:false,
-       /* QQ:'123456', */
-       /* iffavorite:false */
+       startX: 0,
+       move:0,
+       t:2
     } 
-    componentWillMount () { }
-  
-    componentDidMount () {}
-  
-    componentWillUnmount () { }
-     
-   
-    componentDidShow () { 
+
+    //在组件在装载发生前被立刻调用
+    componentWillMount () {
       console.log(111)
       const params = getCurrentInstance()
       const id = params.router.params
@@ -38,11 +35,23 @@ export default class Index extends Component {
         'GET'
       )
     .then(res => {
+      console.log(res.data.goods_images_videos)
       this.setState({
+        images:res.data.goods_images_videos,
         good : res.data,
         iffavorite: res.data.if_collected
       });
     })
+     }
+  
+    componentDidMount () {
+    }
+  
+    componentWillUnmount () {
+     }
+   
+    componentDidShow () { 
+      
 
   }
 
@@ -99,19 +108,47 @@ export default class Index extends Component {
       }
     }
 
+//showphoto
+chooiceImg = () => {
+  Taro.chooseMessageFile()
+}
 
+handleMove=(e)=>{
+  if (e.touches[0].pageX - this.state.startX < -100) {
+    console.log(111)
+      this.leftMove()
+  }
+  if (e.touches[0].pageX - this.state.startX > 100){
+    this.rightMove()
+  }
+}
+
+leftMove = () => {
+  this.setState({
+    move: -50
+  })}
+
+
+rightMove = ()=>{
+  this.setState({
+    move: 0
+  })
+}
+
+handleStart = (e) => {
+  this.setState({startX: e.touches[0].pageX})
+}
 
     render () {
-      console.log(222)
-      const {good,place,hidden,iffavorite} =this.state
+      const {good,place,hidden,iffavorite,move,t} =this.state
       const name= good.user_nickname//
       const avater = good.user_image 
       const QQ = good.qq_account//
       const price = good.price
       const content = good.content
-      const item_image = good.goods_images_videos//
+      const images = this.state.images//
       const time = good.time
-
+      console.log(good,123)
       return (
       <View>
         <View className='top'>
@@ -129,9 +166,21 @@ export default class Index extends Component {
             <Text className='price'>{price}</Text>
             <Text className='message'>{content}</Text>
 
-            <Showphoto item_image={item_image} />
-
-           {/*  <View className='photo'>
+          {/*   <Showphoto item_image={item_image} / */}
+          <View className='photo' onTouchStart={this.handleStart} onTouchMove={this.handleMove}>
+          <View className='row'>
+            {/*photo里直接包image不能实现overflow：hidden，图片会缩放 */}
+           {/* map函数不能直接遍历good.goods_images_videos,只能是state里的 */}
+             {images.map((image)=>{
+               return (
+                 <View key='pic' className='pic' style={{ transform :`translateX(${move}vw)`, transition: `transform ${t}s`}} >
+                <Image src={`http://${image}`} key='image' className='image' style={{ transform :`translateX(${move}vw)`, transition: `transform ${t}s`}} > </Image>
+                </View>
+               )
+             })} 
+            </View>
+          </View>
+            {/* <View className='photo'>
               <Image 
                 src={`http://${item_image ? item_image[0] : null}`}
               ></Image>

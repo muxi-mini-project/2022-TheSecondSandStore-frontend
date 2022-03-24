@@ -1,0 +1,113 @@
+Page {
+  background-color: #f5f6fa;
+}
+.from {
+  width: 750rpx;
+  padding: 45rpx 0 45rpx 0;
+  font-size: 40rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.avatar {
+  height: 289rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2rpx solid #979797;
+  margin-left: 15rpx;
+}
+.avatar-img {
+  margin-left: 277rpx;
+  border-radius: 50%;
+  width: 150rpx;
+  height: 150rpx;
+  border: 2rpx solid #6868f8;
+}
+.avatar-icon {
+  margin: 0 0 0 auto;
+}
+.user-name {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 150rpx;
+  padding-left: 15rpx;
+}
+.nick {
+  font-size: 40rpx;
+}
+.delete-icon {
+  margin: 0 0 0 auto;
+}
+.from-content {
+  border-top: 2rpx solid #cacaca;
+  height: 441rpx;
+  background-color: white;
+  -webkit-box-shadow: 10rpx 1rpx 2rpx 5rpx #cacaca;
+          box-shadow: 10rpx 1rpx 2rpx 5rpx #cacaca;
+  padding: 0 45rpx 0 45rpx;
+}
+.from-button {
+  margin: 40rpx 60rpx;
+}
+/* // display: flex;
+  // justify-content: center; */
+.reset-button {
+  display: inline-block;
+  /* // padding: 21px 42px; */
+  padding-left: 42rpx;
+  padding-right: 42rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* // text-align: center; */
+  background-color: #cacaca;
+  width: 240rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  color: white;
+  font-size: 36rpx;
+  border-radius: 46rpx;
+}
+.submit-button {
+  display: inline-block;
+  /* // padding: 21px 144px; */
+  padding-left: 144rpx;
+  padding-right: 144rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+  font-size: 36rpx;
+  width: 360rpx;
+  height: 92rpx;
+  /* // text-align: center; */
+  line-height: 92rpx;
+  margin-left: 30rpx;
+  background-color: rgba(104, 104, 248, 1);
+  border-radius: 46rpx;
+}
+.icon-right {
+  margin: 0 0 0 auto;
+}
+.nick-input {
+  font-size: 32rpx;
+  padding-left: 32rpx;
+}
+.log-out {
+  position: fixed;
+  top: 85%;
+  left: 20%;
+  right: 20%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  color: #6868f8;
+  font-size: 30rpx;
+}
+

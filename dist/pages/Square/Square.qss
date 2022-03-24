@@ -29,6 +29,7 @@
     margin-top: 40rpx;
     border-radius: 50rpx;
     padding-left: 30rpx;
+   /*  background-color: white; */
 }
 .show{
    /*  background-color: cornflowerblue; */
@@ -49,6 +50,6 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding-left: 20rpx;
-    margin-top: 50rpx;
+    margin-top: 70rpx;
 }
 

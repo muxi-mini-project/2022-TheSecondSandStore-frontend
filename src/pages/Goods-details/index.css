@@ -47,21 +47,37 @@
      color: rgb(253, 76, 76);
  }
 .description .message{
-    font-size: 30px;
+    font-size: 40px;
     color:rgb(98, 98, 98);
+    margin-bottom: 20px;
 }
-.description .photo{
-    margin: 0 auto;
-}
-.description Image{
-    width: 450px;
-    height: 500px;
-    margin-top: 20px;
-    border-radius: 40px;
-}
+
 .description Button{
     background-color: #FEE53A;
     color: #707070;
     border-radius: 15px;
     margin: 40px auto 0 auto;
+    margin-top: 60px;
 }
+/* showphoto */
+.photo {
+    position: relative;
+     margin: 0 auto;
+     width: 50vw;
+     height: 60vw;
+     overflow: hidden;
+ }
+ .row{
+     display: flex;
+     position: absolute;
+ }
+ .pic{
+     display: flex;
+     width: 50vw;
+     height:60vw;
+ }
+ .image{
+     width: 50vw;
+     height:60vw;
+     border-radius: 40px;
+ }

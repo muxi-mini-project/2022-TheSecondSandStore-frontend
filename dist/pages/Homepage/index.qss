@@ -1,1 +1,96 @@
-
+Page{
+  padding: 25rpx;
+}
+.Homepage_box1{
+  width: 700rpx;
+  height: 600rpx;
+  border: 1rpx solid rgb(200, 200, 200);
+}
+.Homepage_avatar{
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 250rpx;
+  margin: 50rpx 225rpx 0 225rpx;
+}
+.Homepage_nickname{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 70rpx;
+}
+.Homepage_count{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400rpx;
+  height: 60rpx;
+  margin: 10rpx 150rpx 0 150rpx;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  color: #505050;
+  /* background-color: red; */
+}
+.Homepage_count::before{
+  content: '';
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  height: 80rpx;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+  border-left: 2rpx solid;
+}
+.Homepage_box2,.Homepage_box3{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.Homepage_img{
+  width: 80rpx;
+  height: 80rpx;
+  background-color: black;
+  margin: 0 50rpx 0 50rpx;
+}
+.Homepage_lists{
+  width: 700rpx;
+  height: 150rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1rpx solid rgb(200, 200, 200);
+}
+.Homepage_favourites{
+  width: 700rpx;
+  height: 150rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1rpx solid rgb(200, 200, 200);
+}
+.Homepage_feedback{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 120rpx;
+  height: 40rpx;
+  font-size: 25rpx;
+  margin: 0 30rpx 0 575rpx;
+}

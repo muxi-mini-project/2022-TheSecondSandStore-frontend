@@ -1,0 +1,72 @@
+.AddGoods_container{
+  width: 700rpx;
+  height: 770rpx;
+  border: 1rpx solid grey;
+  margin: 0 25rpx 0 25rpx;
+}
+.AddGoods_container>View{
+  width: 700rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.AddGoods_container>View>Image{
+  width: 150rpx;
+  height: 150rpx;
+  border: 1rpx solid grey;
+  border-radius: 20rpx;
+  margin: 30rpx 0 0 30rpx;
+}
+.AddGoods_textarea{
+  width: 700rpx;
+  height: 500rpx;
+}
+.AddGoods_tag{
+  width: 165rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  background-color: #f1f1f1;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  margin-left: 30rpx;
+}
+.AddGoods_addimg {
+  width: 150rpx;
+  height: 150rpx;
+  border: 1rpx solid grey;
+  border-radius: 20rpx;
+  margin: 30rpx 0 0 30rpx;
+  position: relative;
+  color: grey;
+}
+.AddGoods_addimg::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80rpx;
+  -webkit-transform:translate(-50%, -50%);
+      -ms-transform:translate(-50%, -50%);
+          transform:translate(-50%, -50%);
+  border-top: 2rpx solid;
+}
+.AddGoods_addimg::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 80rpx;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+  border-left: 2rpx solid;
+}
+.AddGoods_sell{
+  background-color: #fee53a;
+  width: 180rpx;
+  height: 70rpx;
+  border-radius: 20rpx;
+  line-height: 70rpx;
+  font-size: 45rpx;
+  margin-top: 200rpx;
+}

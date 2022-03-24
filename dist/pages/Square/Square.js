@@ -139,23 +139,23 @@ var Square = /*#__PURE__*/function (_Component) {
       var _this$state = this.state,
           bottomFlag = _this$state.bottomFlag,
           goods = _this$state.goods;
-      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "g"], {
         className: "ground",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "g"], {
           className: "header",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Input */ "c"], {
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Input */ "d"], {
             type: "text",
             placeholder: "",
             onClick: this.Toresearch
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
-            src: "http://".concat(_Images_png__WEBPACK_IMPORTED_MODULE_10___default.a),
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "c"], {
+            src: _Images_png__WEBPACK_IMPORTED_MODULE_10___default.a,
             style: {
               width: 32,
               height: 32,
               marginTop: 20
             }
           })]
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "g"], {
           className: "show",
           children: goods.map(function (good) {
             return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_Components_Item__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"], {
@@ -171,7 +171,7 @@ var Square = /*#__PURE__*/function (_Component) {
               if_del: good.if_del
             }, 'item');
           })
-        }), bottomFlag && /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "e"], {
+        }), bottomFlag && /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "g"], {
           className: "bottomBox",
           children: "\u5230\u5E95\u5566\uFF01"
         })]

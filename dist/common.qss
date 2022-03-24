@@ -67,3 +67,262 @@
     margin-left: 20rpx;
     color: rgb(114, 114, 114);
 }
+.toast-box {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.toastbg {
+    opacity: 0.2;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.showToast {
+    position: absolute;
+    opacity: 1;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 40%;
+}
+
+.toast-title {
+    padding-left: 5%;
+    background-color: #FEE53A;
+    color: white;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-top-right-radius: 16rpx;
+    border-top-left-radius: 16rpx;
+}
+
+.toast-main {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: white;
+    text-align: center;
+}
+
+.toast-input {
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 1rpx solid #ddd;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.toast-button {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height:80rpx;
+    background-color: white;
+    border-bottom-left-radius: 16rpx;
+    border-bottom-right-radius: 16rpx;
+}
+
+.button1 {
+    width: 50%;
+}
+
+.button2 {
+    width: 50%;
+}
+
+.button1 button {
+    width: 100%;
+    height: 80rpx;
+    background-color: #FEE53A;
+    color: black;
+    border-radius: 0;
+    border-bottom-left-radius: 16rpx;
+}
+
+.button2 button{
+    width: 100%;
+    height: 80rpx;
+    background-color: #FEE53A;
+    color: black;
+    border-radius: 0;
+    border-bottom-right-radius: 16rpx;
+}
+
+
+
+.goods_container {
+  width: 750rpx;
+  -webkit-box-shadow: 0 10rpx 10rpx grey;
+          box-shadow: 0 10rpx 10rpx grey;
+  padding: 50rpx 75rpx 80rpx 75rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-top: 10rpx;
+}
+.goods_name {
+  width: 600rpx;
+  font-size: 50rpx;
+  margin-bottom: 20rpx;
+  padding-left: 20rpx;
+}
+.goods_img {
+  width: 300rpx;
+  height: 300rpx;
+  background-color: #707070;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.goods_box {
+  width: 280rpx;
+  height: 300rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 20rpx;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.goods_introduction {
+  font-size: 40rpx;
+  height: 250rpx;
+  width: 280rpx;
+}
+.goods_state {
+  font-size: 35rpx;
+  height: 40rpx;
+  width: 280rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* background-color: #000; */
+}
+.goods_sell {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 155rpx;
+  height: 40rpx;
+  font-size: 30rpx;
+  padding: 0;
+  background-color: #fee53a;
+}
+.goods_del {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 135rpx;
+  height: 40rpx;
+  font-size: 30rpx;
+  padding: 0;
+  background-color: #fee53a;
+}
+.goods_sel{
+  height: 40rpx;
+  width: 280rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.toast-box {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.toastbg {
+  opacity: 0.2;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showToast {
+  position: absolute;
+  opacity: 1;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 40%;
+}
+
+.toast-title {
+  padding-left: 5%;
+  background-color: #fee53a;
+  color: white;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}
+
+.toast-main {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+  text-align: center;
+}
+
+.toast-button {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80rpx;
+  background-color: white;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+}
+
+.button1 {
+  width: 50%;
+}
+
+.button2 {
+  width: 50%;
+}
+
+.button1 button {
+  width: 100%;
+  height: 80rpx;
+  background-color: #fee53a;
+  color: black;
+  border-radius: 0;
+  border-bottom-left-radius: 16rpx;
+}
+
+.button2 button {
+  width: 100%;
+  height: 80rpx;
+  background-color: #fee53a;
+  color: black;
+  border-radius: 0;
+  border-bottom-right-radius: 16rpx;
+}
+

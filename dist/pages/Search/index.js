@@ -228,10 +228,10 @@ var Index = /*#__PURE__*/function (_Component) {
           show = _this$state2.show,
           ifdelete = _this$state2.ifdelete;
       var inputVal = this.state.inputVal;
-      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "e"], {
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "e"], {
+      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
           className: "search-header",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "b"], {
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "c"], {
             src: _Images_back_png__WEBPACK_IMPORTED_MODULE_13___default.a,
             style: {
               width: 20,
@@ -239,13 +239,13 @@ var Index = /*#__PURE__*/function (_Component) {
               marginLeft: 10
             },
             onClick: this.handleBack
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Input */ "c"], {
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Input */ "d"], {
             type: "text",
             placeholder: "",
             value: inputVal,
             onInput: this.onInput.bind(this),
             focus: true
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "b"], {
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "c"], {
             src: _Images_png__WEBPACK_IMPORTED_MODULE_12___default.a,
             style: {
               width: 32,
@@ -253,22 +253,22 @@ var Index = /*#__PURE__*/function (_Component) {
             },
             onClick: this.handleConfirm
           })]
-        }), hidden ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "e"], {
+        }), hidden ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
           className: "box",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "e"], {
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
             className: "History",
             children: historys.map(function (history) {
-              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "e"], {
+              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
                 className: "search-history",
                 style: {
                   display: historys.length ? 'block' : 'none'
                 },
-                children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Text */ "d"], {
+                children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Text */ "e"], {
                   onClick: function onClick() {
                     return _this2.handleClickContent(history.name);
                   },
                   children: history.name
-                }, history.id), ifdelete ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Text */ "d"], {
+                }, history.id), ifdelete ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Text */ "e"], {
                   onClick: function onClick() {
                     return _this2.handleDelete(history.id);
                   },
@@ -279,7 +279,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 })]
               }, 'Search');
             })
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "b"], {
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "c"], {
             src: _Images_delete_png__WEBPACK_IMPORTED_MODULE_14___default.a,
             style: {
               width: 25,
@@ -288,7 +288,7 @@ var Index = /*#__PURE__*/function (_Component) {
             },
             onClick: this.clearHistory
           })]
-        }), show ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "e"], {
+        }), show ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
           className: "show",
           children: goods.map(function (good) {
             return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_Components_Item__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"], {

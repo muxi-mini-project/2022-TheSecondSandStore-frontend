@@ -1,16 +1,10 @@
 import { View,Image,Text } from '@tarojs/components'
 import { Component } from 'react'
 import Taro  from '@tarojs/taro'
-
-/* import avater from '../../Images/picture.png' */
 import './index.css'
 
 export default class Index extends Component {
-      /* state={
-            userid:'昵称',
-            price:'¥15',
-            description:'出一本大学生计算机基础，有圈画，有笔记，无破损！！！'
-      } */
+      
 
       Todetail=(goods_id)=>{
         Taro.redirectTo({
