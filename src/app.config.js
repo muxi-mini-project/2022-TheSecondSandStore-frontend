@@ -1,15 +1,16 @@
 export default ({
   pages: [
-    'pages/Login/index',
+    'pages/Addgoods/index',
+    'pages/Homepage/index',
     'pages/Square/Square',
     'pages/Search/index',
-    'pages/Addgoods/index',
     'pages/Goods-details/index',
-    'pages/Homepage/index',
     'pages/changeUserinfo/index',
     'pages/Favourites/index',
     'pages/Lists/index',
     'pages/Tags/index',
+    'pages/Login/index',
+
   ],
   window: {
     backgroundTextStyle: 'dark',
@@ -30,7 +31,7 @@ export default ({
         selectedIconPath: './Images/selected-ground.png'
       },
       {
-        pagePath: 'pages/Add-good/index',
+        pagePath: 'pages/Addgoods/index',
         text: '  ',
         iconPath: './Images/add.png',
         selectedIconPath: './Images/add.png',

@@ -1,13 +1,12 @@
 import Taro from '@tarojs/taro';
 
-
-const preHttp = 'http://121.4.98.41:80';
+const preHttp = 'http://121.4.98.41:80/api/v1';
 const Fetch = (url, data = {}, method = 'GET') => {
   const header = {
     'content-type': 'application/json',
     token: Taro.getStorageSync('token')
-   };
-   
+  };
+
   return Taro.request({
     url: preHttp + url,
     data,

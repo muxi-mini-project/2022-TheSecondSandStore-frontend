@@ -1,7 +1,7 @@
 import { Component } from 'react'
-import { View, Input, Button,Image} from '@tarojs/components'
+import { View, Input, Button, Image } from '@tarojs/components'
 import Taro from '@tarojs/taro'
-import './index.css' 
+import './index.css'
 import image from '../../Images/background.png'
 import ziti from '../../Images/字体1.png'
 import Fetch from '../../Service/fetch'
@@ -10,58 +10,58 @@ export default class Index extends Component {
   constructor() {
     super(...arguments)
     this.state = {
-        account: '',
-        password: '',
+      account: '',
+      password: '',
     }
-}
-getuserid(e) {
+  }
+  getuserid(e) {
     this.setState({
-        account: e.target.value
+      account: e.target.value
     });
-}
+  }
 
-getpwd(e) {
+  getpwd(e) {
     this.setState({
-        password: e.target.value
+      password: e.target.value
     });
-}
+  }
 
-/* login = async () => {
-    const {account,password} = this.state;
-    if (account && password ) {
-      const res = await login(account, password)
-      switch (res)
-    } */
-  login=()=>{
+  /* login = async () => {
       const {account,password} = this.state;
       if (account && password ) {
-       Fetch(
-         '/api/v1/auth',
-         {
-           account,
-           password
-         },
-         'POST'
-       ).then(res => {
-         switch (res.code) {
-           case 200:
-             Taro.setStorage({
-               key: 'account',
-               data: account
-             });
-             Taro.setStorage({
-               key: 'password',
-               data: password
-             });
-             Taro.setStorage({
-               key: 'token',
-               data: res.data,
-           });
-           Taro.reLaunch({
-             url:'/pages/Square/Square'
-           });
-           break;
-         }
+        const res = await login(account, password)
+        switch (res)
+      } */
+  login = () => {
+    const { account, password } = this.state;
+    if (account && password) {
+      Fetch(
+        '/auth',
+        {
+          account,
+          password
+        },
+        'POST'
+      ).then(res => {
+        switch (res.code) {
+          case 200:
+            Taro.setStorage({
+              key: 'account',
+              data: account
+            });
+            Taro.setStorage({
+              key: 'password',
+              data: password
+            });
+            Taro.setStorage({
+              key: 'token',
+              data: res.data,
+            });
+            Taro.reLaunch({
+              url: '/pages/Square/Square'
+            });
+            break;
+        }
       }).catch(() => {
         Taro.showToast({
           icon: 'none',
@@ -77,22 +77,22 @@ getpwd(e) {
     }
   }
 
-    render () {
-      
-      return (
-     <View className='Login'>
-       <Image src={image}></Image>
+  render() {
+
+    return (
+      <View className='Login'>
+        <Image src={image}></Image>
         <View className='header'>
-         <Image src={ziti}></Image>
+          <Image src={ziti}></Image>
         </View>
-         <View className='passWord'>
+        <View className='passWord'>
           <Input type='number' placeholder='请输入您的学号' className='input1' onInput={this.getuserid.bind(this)} />
           <Input type='password' password placeholder='密码' className='input2' onInput={this.getpwd.bind(this)} />
-         </View>
-         <View>
-             <Button className='btn1' onClick={this.login}>登录</Button>
-         </View>
-     </View>
-        )
-    }
+        </View>
+        <View>
+          <Button className='btn1' onClick={this.login}>登录</Button>
+        </View>
+      </View>
+    )
   }
+}

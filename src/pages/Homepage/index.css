@@ -1,23 +1,23 @@
-Page{
+Page {
   padding: 25px;
 }
-.Homepage_box1{
+.Homepage_box1 {
   width: 700px;
   height: 600px;
   border: 1px solid rgb(200, 200, 200);
 }
-.Homepage_avatar{
+.Homepage_avatar {
   width: 250px;
   height: 250px;
   border-radius: 250px;
   margin: 50px 225px 0px 225px;
 }
-.Homepage_nickname{
+.Homepage_nickname {
   display: flex;
   justify-content: center;
   font-size: 70px;
 }
-.Homepage_count{
+.Homepage_count {
   display: flex;
   width: 400px;
   height: 60px;
@@ -27,39 +27,40 @@ Page{
   color: #505050;
   /* background-color: red; */
 }
-.Homepage_count::before{
-  content: '';
+.Homepage_count::before {
+  content: "";
   position: absolute;
   top: 30px;
   left: 50%;
   height: 80px;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   border-left: 2px solid;
 }
-.Homepage_box2,.Homepage_box3{
+.Homepage_box2,
+.Homepage_box3 {
   display: flex;
 }
-.Homepage_img{
+.Homepage_img {
   width: 80px;
   height: 80px;
   background-color: black;
   margin: 0 50px 0 50px;
 }
-.Homepage_lists{
+.Homepage_lists {
   width: 700px;
   height: 150px;
   display: flex;
   align-items: center;
   border: 1px solid rgb(200, 200, 200);
 }
-.Homepage_favourites{
+.Homepage_favourites {
   width: 700px;
   height: 150px;
   display: flex;
   align-items: center;
   border: 1px solid rgb(200, 200, 200);
 }
-.Homepage_feedback{
+.Homepage_feedback {
   display: flex;
   align-items: center;
   justify-content: center;

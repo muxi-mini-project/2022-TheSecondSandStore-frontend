@@ -2,7 +2,7 @@ import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import './index.css'
-import favourite from '../../Images/favourite.png'
+import favorite from '../../Images/favorite.png'
 import lists from '../../Images/lists.png'
 import Modal3 from '../../Components/Modal3'
 import Fetch from '../../Service/fetch'
@@ -36,6 +36,11 @@ export default class index extends Component {
       url: '/pages/Lists/index'
     })
   }
+  touserinfo() {
+    Taro.navigateTo({
+      url: '/pages/changeUserinfo/index'
+    })
+  }
 
   showModal = () => {
     const ifHidden = this.state.hidden
@@ -54,7 +59,7 @@ export default class index extends Component {
     return (
       <View>
         <View className='Homepage_box1'>
-          <Image className='Homepage_avatar' src={avatar ? avatar : `http://${user.image}`} onClick={this.changeAvater}></Image>
+          <Image className='Homepage_avatar' src={avatar ? avatar : `http://${user.image}`} onClick={this.touserinfo}></Image>
           <Text className='Homepage_nickname' onClick={this.changeName}>{user.nickname}</Text>
           <View className='Homepage_count'>
             <View className='Homepage_box2'>
@@ -72,7 +77,7 @@ export default class index extends Component {
           <Text>我发布的</Text>
         </View>
         <View onClick={this.tofavourites} className='Homepage_favourites'>
-          <Image src={favourite} className='Homepage_img'></Image>
+          <Image src={favorite} className='Homepage_img'></Image>
           <Text>我收藏的</Text>
         </View>
         <View className='Homepage_feedback' onClick={this.showModal}>意见反馈</View>

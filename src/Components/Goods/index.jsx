@@ -33,7 +33,8 @@ export default class Goods extends Component {
     return (
       <View className='goods_container' >
         <View className='goods_name'>{user_nickname}</View>
-        <Image className='goods_img' src={`http://${goods_images_videos}`} onClick={() => this.todetail(id)} />
+
+        <Image className='goods_img' src={`http://${goods_images_videos[0]}`} onClick={() => this.todetail(id)} />
         <View className='goods_box'>
           <Text className='goods_introduction'>{content}</Text>
           <View className='goods_state'>

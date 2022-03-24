@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import Taro from '@tarojs/taro'
 import { View, Input } from '@tarojs/components'
 import './index.css'
 import Fetch from '../../Service/fetch'
