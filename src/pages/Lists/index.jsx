@@ -23,9 +23,15 @@ export default class Index extends Component {
 
   todetail() {
     Taro.navigateTo({
-      url: '/pages/Goods-details/index?id=' + this.id
+      url: '/pages/Goods-details/index?goods_id=' + this.id
     })
   }
+  // Todetail=(goods_id)=>{
+  //   Taro.redirectTo({
+  //     url:'/pages/Goods-details/index?goods_id='+goods_id
+  //   })
+  //   return 1
+  // }
 
   delgood = (id) => {
     Fetch(`/user/goods/${id}`, {}, 'DELETE')

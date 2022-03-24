@@ -19,7 +19,7 @@ Page {
   border-radius: 50%;
   width: 150px;
   height: 150px;
-  border: 2px solid #6868f8;
+  border: 2px solid #fee53a;
 }
 .avatar-icon {
   margin: 0 0 0 auto;
@@ -78,7 +78,7 @@ Page {
   /* // text-align: center; */
   line-height: 92px;
   margin-left: 30px;
-  background-color: rgba(104, 104, 248, 1);
+  background-color: #fee53a;
   border-radius: 46px;
 }
 

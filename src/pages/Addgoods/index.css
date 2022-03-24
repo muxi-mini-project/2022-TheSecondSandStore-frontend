@@ -1,25 +1,25 @@
-.AddGoods_container{
+.AddGoods_container {
   width: 700px;
-  height: 770px;
+  /* height: 770px; */
   border: 1px solid grey;
   margin: 0 25px 0 25px;
 }
-.AddGoods_container>View{
+.AddGoods_container > View {
   width: 700px;
   display: flex;
+  flex-wrap: wrap;
 }
-.AddGoods_container>View>Image{
-  width: 150px;
-  height: 150px;
-  border: 1px solid grey;
+.AddGoods_container > View > Image {
+  width: 200px;
+  height: 200px;
   border-radius: 20px;
-  margin: 30px 0 0 30px;
+  margin: 30px 0 25px 25px;
 }
-.AddGoods_textarea{
+.AddGoods_textarea {
   width: 700px;
-  height: 500px;
+  height: 400px;
 }
-.AddGoods_tag{
+.AddGoods_tag {
   width: 165px;
   height: 50px;
   border-radius: 50px;
@@ -29,38 +29,57 @@
   margin-left: 30px;
 }
 .AddGoods_addimg {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border: 1px solid grey;
   border-radius: 20px;
-  margin: 30px 0 0 30px;
+  margin: 30px 0 25px 25px;
   position: relative;
   color: grey;
 }
 .AddGoods_addimg::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
   width: 80px;
-  transform:translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-top: 2px solid;
 }
 .AddGoods_addimg::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
   height: 80px;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   border-left: 2px solid;
 }
-.AddGoods_sell{
+.AddGoods_price {
+  width: 700px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 25px;
+  padding-left: 25px;
+}
+.AddGoods_price View{
+  display: flex;
+}
+.AddGoods_price Text{
+  color: red;
+}
+.AddGoods_price Input{
+  width: 200px;
+  color: red;
+}
+.AddGoods_sell {
   background-color: #fee53a;
   width: 180px;
   height: 70px;
   border-radius: 20px;
   line-height: 70px;
   font-size: 45px;
-  margin-top: 200px;
+  margin-top: 100px;
 }
