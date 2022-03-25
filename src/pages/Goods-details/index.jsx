@@ -3,7 +3,6 @@ import { View, Text,Image, Button } from '@tarojs/components'
 import Taro,{getCurrentInstance} from '@tarojs/taro'
 import './index.css'
 import Fetch from '../../Service/fetch'
-import Showphoto from '../../Components/Showphoto'
 import favorite from '../../Images/favorite.png'
 import favorited from '../../Images/favorited.png'
 import back from '../../Images/back.png'
@@ -30,7 +29,7 @@ export default class Index extends Component {
       const id = params.router.params
       const goods_id = id.goods_id
       Fetch(
-        `/api/v1/goods/details/one/${goods_id}`,
+        `/goods/details/one/${goods_id}`,
         {},
         'GET'
       )
@@ -84,11 +83,11 @@ export default class Index extends Component {
       if(Favorite)
       {
         Fetch(
-        `/api/v1/collection`,
+        `/collection`,
           {
             goods_id:collection_id
           },
-          'GET'
+          'POST'
         )
         .then(res => {
           console.log(res);
@@ -97,7 +96,7 @@ export default class Index extends Component {
       else
       {
         Fetch(
-          `/api/v1/collection/${collection_id}`,
+          `/collection/${collection_id}`,
           {},
           'DELETE'
         )
@@ -148,7 +147,6 @@ handleStart = (e) => {
       const content = good.content
       const images = this.state.images//
       const time = good.time
-      console.log(good,123)
       return (
       <View>
         <View className='top'>
@@ -173,7 +171,7 @@ handleStart = (e) => {
            {/* map函数不能直接遍历good.goods_images_videos,只能是state里的 */}
              {images.map((image)=>{
                return (
-                 <View key='pic' className='pic' style={{ transform :`translateX(${move}vw)`, transition: `transform ${t}s`}} >
+                 <View key='pic' className='pic' /* style={{ transform :`translateX(${move}vw)`, transition: `transform ${t}s`}} */ >
                 <Image src={`http://${image}`} key='image' className='image' style={{ transform :`translateX(${move}vw)`, transition: `transform ${t}s`}} > </Image>
                 </View>
                )

@@ -1,7 +1,7 @@
-Page{
+Page {
   padding: 25rpx;
 }
-.Tags_input{
+.Tags_input {
   width: 700rpx;
   height: 100rpx;
   border: 1rpx solid grey;
@@ -10,7 +10,7 @@ Page{
   display: -ms-flexbox;
   display: flex;
 }
-.Tags_input>Input{
+.Tags_input > Input {
   width: 600rpx;
   height: 100rpx;
   padding-left: 20rpx;
@@ -22,26 +22,26 @@ Page{
   position: relative;
   color: grey;
 }
-.Tags_add::after{
-  content: '';
+.Tags_add::after {
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
   width: 50rpx;
-  -webkit-transform:translate(-50%, -50%);
-      -ms-transform:translate(-50%, -50%);
-          transform:translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-top: 10rpx solid;
 }
-.Tags_add::before{
-  content: '';
+.Tags_add::before {
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
   height: 50rpx;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-left: 10rpx solid;
 }
 

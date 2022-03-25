@@ -142,7 +142,7 @@ var Index = /*#__PURE__*/function (_Component) {
     });
 
     Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(_this), "getsearch", function (condition) {
-      Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_15__[/* default */ "a"])("/api/v1/goods/details/all/condition/".concat(condition), {}, 'GET').then(function (data) {
+      Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_15__[/* default */ "a"])("/goods/details/all/condition/".concat(condition), {}, 'GET').then(function (data) {
         console.log(data);
         var newGoods = _this.state.goods;
 
@@ -228,10 +228,10 @@ var Index = /*#__PURE__*/function (_Component) {
           show = _this$state2.show,
           ifdelete = _this$state2.ifdelete;
       var inputVal = this.state.inputVal;
-      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
+      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "f"], {
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "f"], {
           className: "search-header",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "c"], {
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "b"], {
             src: _Images_back_png__WEBPACK_IMPORTED_MODULE_13___default.a,
             style: {
               width: 20,
@@ -239,13 +239,13 @@ var Index = /*#__PURE__*/function (_Component) {
               marginLeft: 10
             },
             onClick: this.handleBack
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Input */ "d"], {
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Input */ "c"], {
             type: "text",
             placeholder: "",
             value: inputVal,
             onInput: this.onInput.bind(this),
             focus: true
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "c"], {
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "b"], {
             src: _Images_png__WEBPACK_IMPORTED_MODULE_12___default.a,
             style: {
               width: 32,
@@ -253,22 +253,22 @@ var Index = /*#__PURE__*/function (_Component) {
             },
             onClick: this.handleConfirm
           })]
-        }), hidden ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
+        }), hidden ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "f"], {
           className: "box",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "f"], {
             className: "History",
             children: historys.map(function (history) {
-              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
+              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "f"], {
                 className: "search-history",
                 style: {
                   display: historys.length ? 'block' : 'none'
                 },
-                children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Text */ "e"], {
+                children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Text */ "d"], {
                   onClick: function onClick() {
                     return _this2.handleClickContent(history.name);
                   },
                   children: history.name
-                }, history.id), ifdelete ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Text */ "e"], {
+                }, history.id), ifdelete ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Text */ "d"], {
                   onClick: function onClick() {
                     return _this2.handleDelete(history.id);
                   },
@@ -279,7 +279,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 })]
               }, 'Search');
             })
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "c"], {
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* Image */ "b"], {
             src: _Images_delete_png__WEBPACK_IMPORTED_MODULE_14___default.a,
             style: {
               width: 25,
@@ -288,7 +288,7 @@ var Index = /*#__PURE__*/function (_Component) {
             },
             onClick: this.clearHistory
           })]
-        }), show ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "g"], {
+        }), show ? null : /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__[/* View */ "f"], {
           className: "show",
           children: goods.map(function (good) {
             return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__["jsx"])(_Components_Item__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"], {

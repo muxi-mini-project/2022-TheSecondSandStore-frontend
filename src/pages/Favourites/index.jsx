@@ -15,6 +15,7 @@ export default class Index extends Component {
   componentDidMount() {
     Fetch(`/collection`, {}, 'GET')
       .then(res => {
+        console.log(res)
         if (res.data) {
           this.setState({ goods: res.data })
         }
@@ -29,7 +30,7 @@ export default class Index extends Component {
 
   todetail() {
     Taro.navigateTo({
-      url: '/pages/Goods-details/index?id=' + this.id
+      url: '/pages/Goods-details/index?goods_id=' + this.id
     })
   }
 

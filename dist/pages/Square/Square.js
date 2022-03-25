@@ -59,7 +59,7 @@ var Square = /*#__PURE__*/function (_Component) {
 
     Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_this), "getGoods", function () {
       var newGoods = _this.state.goods;
-      Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_12__[/* default */ "a"])('/api/v1/goods/details/all').then(function (data) {
+      Object(_Service_fetch__WEBPACK_IMPORTED_MODULE_12__[/* default */ "a"])('/goods/details/all').then(function (data) {
         if (data.data !== null) {
           newGoods = newGoods.concat(data.data);
           _tarojs_taro__WEBPACK_IMPORTED_MODULE_8___default.a.stopPullDownRefresh();
@@ -139,15 +139,15 @@ var Square = /*#__PURE__*/function (_Component) {
       var _this$state = this.state,
           bottomFlag = _this$state.bottomFlag,
           goods = _this$state.goods;
-      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "g"], {
+      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
         className: "ground",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "g"], {
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
           className: "header",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Input */ "d"], {
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Input */ "c"], {
             type: "text",
             placeholder: "",
             onClick: this.Toresearch
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "c"], {
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Image */ "b"], {
             src: _Images_png__WEBPACK_IMPORTED_MODULE_10___default.a,
             style: {
               width: 32,
@@ -155,7 +155,7 @@ var Square = /*#__PURE__*/function (_Component) {
               marginTop: 20
             }
           })]
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "g"], {
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
           className: "show",
           children: goods.map(function (good) {
             return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_Components_Item__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"], {
@@ -171,7 +171,7 @@ var Square = /*#__PURE__*/function (_Component) {
               if_del: good.if_del
             }, 'item');
           })
-        }), bottomFlag && /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "g"], {
+        }), bottomFlag && /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
           className: "bottomBox",
           children: "\u5230\u5E95\u5566\uFF01"
         })]

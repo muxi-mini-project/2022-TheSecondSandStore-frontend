@@ -21,7 +21,7 @@ export default class Index extends Component {
       {if_sell||if_del ? null : <View className='item' onClick={() => this.Todetail(goods_id)}>
         <View className='photo'>
             <Image 
-              src={`http://${item_image}`}
+              src={`http://${item_image[0]}`}
             ></Image>
         </View>
         <View className='detail'>

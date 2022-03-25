@@ -1193,7 +1193,7 @@ Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_1__[/* mergeInternalComponents */
   !*** ./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js ***!
   \*****************************************************************************/
 /*! exports provided: Ad, AdCustom, Audio, Block, Button, Camera, Canvas, Checkbox, CheckboxGroup, CoverImage, CoverView, CustomWrapper, Editor, Form, FunctionalPageNavigator, Icon, Image, Input, KeyboardAccessory, Label, LivePlayer, LivePusher, Map, MatchMedia, MovableArea, MovableView, NavigationBar, Navigator, OfficialAccount, OpenData, PageContainer, PageMeta, Picker, PickerView, PickerViewColumn, Progress, Radio, RadioGroup, RichText, ScrollView, Slider, Slot, Swiper, SwiperItem, Switch, Text, Textarea, Video, View, VoipRoom, WebView */
-/*! exports used: Button, Form, Image, Input, Text, Textarea, View */
+/*! exports used: Button, Image, Input, Text, Textarea, View */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1210,11 +1210,11 @@ Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_1__[/* mergeInternalComponents */
 /* unused harmony export CoverView */
 /* unused harmony export CustomWrapper */
 /* unused harmony export Editor */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Form; });
+/* unused harmony export Form */
 /* unused harmony export FunctionalPageNavigator */
 /* unused harmony export Icon */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Image; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Input; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Image; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Input; });
 /* unused harmony export KeyboardAccessory */
 /* unused harmony export Label */
 /* unused harmony export LivePlayer */
@@ -1242,10 +1242,10 @@ Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_1__[/* mergeInternalComponents */
 /* unused harmony export Swiper */
 /* unused harmony export SwiperItem */
 /* unused harmony export Switch */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Text; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return Textarea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Text; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Textarea; });
 /* unused harmony export Video */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return View; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return View; });
 /* unused harmony export VoipRoom */
 /* unused harmony export WebView */
 var View = 'view';

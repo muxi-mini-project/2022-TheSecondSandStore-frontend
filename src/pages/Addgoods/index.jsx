@@ -17,6 +17,13 @@ export default class Index extends Component {
       price: ''
     }
   }
+  componentWillMount () {
+    this.setState({
+      images: [],
+      tempImage: [],
+      price: ''
+    })
+  }
 
   toTags() {
     Taro.navigateTo({
@@ -27,7 +34,9 @@ export default class Index extends Component {
   showModal = () => {
     const ifHidden = this.state.hidden
     const Hidden = !ifHidden
-    this.setState({ hidden: Hidden })
+    this.setState({ 
+      hidden: Hidden ,
+    })
   }
 
   changeHidden = () => {
@@ -62,7 +71,7 @@ export default class Index extends Component {
   }
 
   render() {
-    const { tempImage } = this.state
+    const { tempImage} = this.state
     return (
       <View>
         <View className='AddGoods_container'>

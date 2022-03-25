@@ -2,11 +2,7 @@ import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import './index.css'
-<<<<<<< HEAD
 import favorite from '../../Images/favorite.png'
-=======
-import favourite from '../../Images/favorite.png'
->>>>>>> e29030f9a2047267047222d842eaeb94487d30c5
 import lists from '../../Images/lists.png'
 import Modal3 from '../../Components/Modal3'
 import Fetch from '../../Service/fetch'

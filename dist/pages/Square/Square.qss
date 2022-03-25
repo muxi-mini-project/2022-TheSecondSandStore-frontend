@@ -50,6 +50,6 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding-left: 20rpx;
-    margin-top: 70rpx;
+    margin-top: 100rpx;
 }
 

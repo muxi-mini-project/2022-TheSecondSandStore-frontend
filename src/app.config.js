@@ -1,7 +1,7 @@
 export default ({
   pages: [
-    'pages/Login/index',
     'pages/Square/Square',
+    'pages/Login/index',
     'pages/Search/index',
     'pages/Addgoods/index',
     'pages/Goods-details/index',
@@ -42,7 +42,9 @@ export default ({
         iconPath: './Images/home.png',
         selectedIconPath: './Images/selected-home.png'
       }],
-      backgroundColor: '#FFFFFF'
+      color: '#000000',
+      backgroundColor: '#FFFFFF',
+      selectedColor: '#FFFFFF'
     }
   
     })

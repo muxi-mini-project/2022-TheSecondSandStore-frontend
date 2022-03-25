@@ -101,7 +101,7 @@ export default class Index extends Component {
 //搜索结果
       getsearch=(condition)=>{
         Fetch(
-          `/api/v1/goods/details/all/condition/${condition}`,
+          `/goods/details/all/condition/${condition}`,
           {},
           'GET'
         ).then(data=>{

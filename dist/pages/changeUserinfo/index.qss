@@ -24,7 +24,7 @@ Page {
   border-radius: 50%;
   width: 150rpx;
   height: 150rpx;
-  border: 2rpx solid #6868f8;
+  border: 2rpx solid #fee53a;
 }
 .avatar-icon {
   margin: 0 0 0 auto;
@@ -88,7 +88,7 @@ Page {
   /* // text-align: center; */
   line-height: 92rpx;
   margin-left: 30rpx;
-  background-color: rgba(104, 104, 248, 1);
+  background-color: #fee53a;
   border-radius: 46rpx;
 }
 .icon-right {

@@ -34,7 +34,7 @@ export default class Square extends Component {
   getGoods=()=>{
     let newGoods = this.state.goods;
     Fetch(
-      '/api/v1/goods/details/all',
+      '/goods/details/all',
     )
     .then(data => {
       if (data.data !== null) {

@@ -105,16 +105,22 @@ var Index = /*#__PURE__*/function (_Component) {
     key: "todetail",
     value: function todetail() {
       _tarojs_taro__WEBPACK_IMPORTED_MODULE_8___default.a.navigateTo({
-        url: '/pages/Goods-details/index?id=' + this.id
+        url: '/pages/Goods-details/index?goods_id=' + this.id
       });
-    }
+    } // Todetail=(goods_id)=>{
+    //   Taro.redirectTo({
+    //     url:'/pages/Goods-details/index?goods_id='+goods_id
+    //   })
+    //   return 1
+    // }
+
   }, {
     key: "render",
     value: function render() {
       var _this3 = this;
 
       var goods = this.state.goods;
-      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_9__[/* View */ "g"], {
+      return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_9__[/* View */ "f"], {
         children: goods.map(function (good) {
           return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_Components_Goods__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"], Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(Object(_Users_apple_Desktop_miniproject_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({}, goods), {}, {
             goods: goods,

@@ -61,14 +61,6 @@
   </button>
 </template>
 
-<template name="tmpl_0_form">
-  <form report-submit="{{xs.b(i.reportSubmit,false)}}" bindsubmit="eh" bindreset="eh" name="{{i.name}}" report-submit-timeout="{{xs.b(i.reportSubmitTimeout,0)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
-    <block qq:for="{{i.cn}}" qq:key="sid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </form>
-</template>
-
 <template name="tmpl_0_input">
   <template is="{{xs.c(i, 'tmpl_0_')}}" data="{{i:i}}" />
 </template>
@@ -181,14 +173,6 @@
   </text>
 </template>
 
-<template name="tmpl_1_form">
-  <form report-submit="{{xs.b(i.reportSubmit,false)}}" bindsubmit="eh" bindreset="eh" name="{{i.name}}" report-submit-timeout="{{xs.b(i.reportSubmitTimeout,0)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
-    <block qq:for="{{i.cn}}" qq:key="sid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </form>
-</template>
-
 <template name="tmpl_1_scroll-view">
   <scroll-view scroll-x="{{xs.b(i.scrollX,false)}}" scroll-y="{{xs.b(i.scrollY,false)}}" upper-threshold="{{xs.b(i.upperThreshold,50)}}" lower-threshold="{{xs.b(i.lowerThreshold,50)}}" scroll-top="{{i.scrollTop}}" scroll-left="{{i.scrollLeft}}" scroll-into-view="{{i.scrollIntoView}}" scroll-with-animation="{{xs.b(i.scrollWithAnimation,false)}}" enable-back-to-top="{{xs.b(i.enableBackToTop,false)}}" bindscrolltoupper="eh" bindscrolltolower="eh" bindscroll="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" enable-flex="{{xs.b(i.enableFlex,false)}}" scroll-anchoring="{{xs.b(i.scrollAnchoring,false)}}" refresher-enabled="{{xs.b(i.refresherEnabled,false)}}" refresher-threshold="{{xs.b(i.refresherThreshold,45)}}" refresher-default-style="{{xs.b(i.refresherDefaultStyle,'black')}}" refresher-background="{{xs.b(i.refresherBackground,'#FFF')}}" refresher-triggered="{{xs.b(i.refresherTriggered,false)}}" enhanced="{{xs.b(i.enhanced,false)}}" bounces="{{xs.b(i.bounces,true)}}" show-scrollbar="{{xs.b(i.showScrollbar,true)}}" paging-enabled="{{xs.b(i.pagingEnabled,false)}}" fast-deceleration="{{xs.b(i.fastDeceleration,false)}}" binddragstart="eh" binddragging="eh" binddragend="eh" bindrefresherpulling="eh" bindrefresherrefresh="eh" bindrefresherrestore="eh" bindrefresherabort="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
     <block qq:for="{{i.cn}}" qq:key="sid">
@@ -249,14 +233,6 @@
   </text>
 </template>
 
-<template name="tmpl_2_form">
-  <form report-submit="{{xs.b(i.reportSubmit,false)}}" bindsubmit="eh" bindreset="eh" name="{{i.name}}" report-submit-timeout="{{xs.b(i.reportSubmitTimeout,0)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
-    <block qq:for="{{i.cn}}" qq:key="sid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </form>
-</template>
-
 <template name="tmpl_2_scroll-view">
   <scroll-view scroll-x="{{xs.b(i.scrollX,false)}}" scroll-y="{{xs.b(i.scrollY,false)}}" upper-threshold="{{xs.b(i.upperThreshold,50)}}" lower-threshold="{{xs.b(i.lowerThreshold,50)}}" scroll-top="{{i.scrollTop}}" scroll-left="{{i.scrollLeft}}" scroll-into-view="{{i.scrollIntoView}}" scroll-with-animation="{{xs.b(i.scrollWithAnimation,false)}}" enable-back-to-top="{{xs.b(i.enableBackToTop,false)}}" bindscrolltoupper="eh" bindscrolltolower="eh" bindscroll="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" enable-flex="{{xs.b(i.enableFlex,false)}}" scroll-anchoring="{{xs.b(i.scrollAnchoring,false)}}" refresher-enabled="{{xs.b(i.refresherEnabled,false)}}" refresher-threshold="{{xs.b(i.refresherThreshold,45)}}" refresher-default-style="{{xs.b(i.refresherDefaultStyle,'black')}}" refresher-background="{{xs.b(i.refresherBackground,'#FFF')}}" refresher-triggered="{{xs.b(i.refresherTriggered,false)}}" enhanced="{{xs.b(i.enhanced,false)}}" bounces="{{xs.b(i.bounces,true)}}" show-scrollbar="{{xs.b(i.showScrollbar,true)}}" paging-enabled="{{xs.b(i.pagingEnabled,false)}}" fast-deceleration="{{xs.b(i.fastDeceleration,false)}}" binddragstart="eh" binddragging="eh" binddragend="eh" bindrefresherpulling="eh" bindrefresherrefresh="eh" bindrefresherrestore="eh" bindrefresherabort="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
     <block qq:for="{{i.cn}}" qq:key="sid">
@@ -315,14 +291,6 @@
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
   </text>
-</template>
-
-<template name="tmpl_3_form">
-  <form report-submit="{{xs.b(i.reportSubmit,false)}}" bindsubmit="eh" bindreset="eh" name="{{i.name}}" report-submit-timeout="{{xs.b(i.reportSubmitTimeout,0)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
-    <block qq:for="{{i.cn}}" qq:key="sid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </form>
 </template>
 
 <template name="tmpl_3_scroll-view">

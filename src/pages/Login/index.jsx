@@ -36,7 +36,7 @@ getpwd(e) {
       const {account,password} = this.state;
       if (account && password ) {
        Fetch(
-         '/api/v1/auth',
+         '/auth',
          {
            account,
            password
