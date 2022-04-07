@@ -31,15 +31,29 @@ export default class index extends Component {
       url: '/pages/Favourites/index'
     })
   }
+
   tolists() {
     Taro.navigateTo({
       url: '/pages/Lists/index'
     })
   }
+
   touserinfo() {
     Taro.navigateTo({
       url: '/pages/changeUserinfo/index'
     })
+  }
+
+  onPullDownRefresh() {
+    Taro.showNavigationBarLoading();
+    Fetch(`/user`, {}, 'GET')
+      .then(res => {
+        if (res.data) {
+          this.setState({ user: res.data })
+          Taro.stopPullDownRefresh();
+          Taro.hideNavigationBarLoading();
+        }
+      })
   }
 
   showModal = () => {

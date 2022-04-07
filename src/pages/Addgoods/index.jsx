@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Textarea, Button, Image, Input, Text } from '@tarojs/components'
+import { View, Textarea, Button, Image, Input, Text,Canvas } from '@tarojs/components'
 import './index.css'
 import Modal4 from '../../Components/Modal4'
 
@@ -14,14 +14,16 @@ export default class Index extends Component {
       hidden: true,
       images: [],
       tempImage: [],
-      price: ''
+      price: '',
+      description:''
     }
   }
-  componentWillMount () {
+  componentDidShow() {
     this.setState({
       images: [],
       tempImage: [],
-      price: ''
+      price: '',
+      description:''
     })
   }
 
@@ -34,8 +36,8 @@ export default class Index extends Component {
   showModal = () => {
     const ifHidden = this.state.hidden
     const Hidden = !ifHidden
-    this.setState({ 
-      hidden: Hidden ,
+    this.setState({
+      hidden: Hidden,
     })
   }
 
@@ -62,6 +64,10 @@ export default class Index extends Component {
       })
   }
 
+  compressImage = () => {
+    Taro.compressImage()
+  }
+
   handleText = (e) => {
     this.setState({ description: e.target.value });
   }
@@ -71,24 +77,24 @@ export default class Index extends Component {
   }
 
   render() {
-    const { tempImage} = this.state
+    const { tempImage } = this.state
     return (
       <View>
         <View className='AddGoods_container'>
           <Textarea type='number' placeholder='请描述一下你的宝贝' maxlength={250} className='AddGoods_textarea' value={this.state.description} onInput={this.handleText}></Textarea>
+          <View className='AddGoods_price'>
+            定价：
+            <View>
+              <Text>￥</Text>
+              <Input placeholder='00.00' placeholderStyle='color:red' type='number' onInput={this.handlePrice} />
+            </View>
+          </View>
           <Button onClick={this.toTags} className='AddGoods_tag'>#</Button>
           <View>
             {tempImage.map((image) => {
               return <Image key={image.id} src={image} />
             })}
             <View className='AddGoods_addimg' onClick={this.addImage}></View>
-          </View>
-        </View>
-        <View className='AddGoods_price'>
-          定价：
-          <View>
-            <Text>￥</Text>
-            <Input placeholder='00.00' placeholderStyle='color:red' type='number' onInput={this.handlePrice} />
           </View>
         </View>
         <Button className='AddGoods_sell' onClick={this.showModal}>发布</Button>

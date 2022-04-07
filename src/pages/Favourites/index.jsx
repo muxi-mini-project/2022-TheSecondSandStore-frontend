@@ -15,7 +15,7 @@ export default class Index extends Component {
   componentDidMount() {
     Fetch(`/collection`, {}, 'GET')
       .then(res => {
-        console.log(res)
+        // console.log(res)
         if (res.data) {
           this.setState({ goods: res.data })
         }

@@ -56,7 +56,7 @@ export default class Index extends Component {
     const { image, nickname } = this.state
     Fetch(`/user/image`, { image }, 'PUT')
     Fetch(`/user/nickname`, { nickname }, 'PUT')
-    if (!nickname && !image) {
+    if (!nickname || !image) {
       Taro.showToast({
         icon: 'none',
         title: '昵称或头像不能为空'

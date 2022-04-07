@@ -1,7 +1,9 @@
 .AddGoods_container {
   width: 700px;
   /* height: 770px; */
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 #A0A0A0;
   margin: 0 25px 0 25px;
 }
 .AddGoods_container > View {
@@ -18,6 +20,7 @@
 .AddGoods_textarea {
   width: 700px;
   height: 400px;
+  padding: 20px ;
 }
 .AddGoods_tag {
   width: 165px;
