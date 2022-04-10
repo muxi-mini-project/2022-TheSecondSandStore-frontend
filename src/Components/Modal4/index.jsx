@@ -49,12 +49,24 @@ export default class Index extends Component {
       second = "0" + second;
     }
 
-      return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second
+    return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second
   }
 
+  debounce(f) {
+    var timer = null
+    return function () {
+      if (timer) {
+        clearTimeout(timer)
+      }
+
+      timer = setTimeout(() => {
+        f.call(this)
+      }, 1000)
+    }
+  }
 
   handleConfirm = () => {
-    const time=this.getCurrentTime()
+    const time = this.getCurrentTime()
     const { price, description, images } = this.props
     const { qq_account, videos, tag_ids } = this.state
     if (qq_account) {
@@ -65,6 +77,9 @@ export default class Index extends Component {
             icon: 'none',
             title: '发布成功'
           });
+          Taro.reLaunch({
+            url:'/pages/Square/Square'
+          })
         })
     } else {
       Taro.showToast({
@@ -94,7 +109,7 @@ export default class Index extends Component {
                 <Button catchtap='cancel' onClick={this.handleCancle}>取消</Button>
               </View>
               <View class='button2'>
-                <Button catchtap='confirm' onClick={this.handleConfirm}>确定</Button>
+                <Button catchtap='confirm' onClick={this.debounce(this.handleConfirm)}>确定</Button>
               </View>
             </View>
           </View>

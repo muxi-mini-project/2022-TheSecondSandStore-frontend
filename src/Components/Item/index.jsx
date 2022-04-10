@@ -7,7 +7,7 @@ export default class Index extends Component {
       
 
       Todetail=(goods_id)=>{
-        Taro.redirectTo({
+        Taro.navigateTo({
           url:'/pages/Goods-details/index?goods_id='+goods_id
         })
         return 1

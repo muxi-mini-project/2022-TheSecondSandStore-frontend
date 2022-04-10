@@ -1,10 +1,11 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Text, Image } from '@tarojs/components'
+import { View, Text, Image, Button } from '@tarojs/components'
 import './index.css'
 import favorite from '../../Images/favorite.png'
 import lists from '../../Images/lists.png'
 import Modal3 from '../../Components/Modal3'
+import Modal5 from '../../Components/Modal5'
 import Fetch from '../../Service/fetch'
 
 export default class index extends Component {
@@ -12,9 +13,20 @@ export default class index extends Component {
   state = {
     text: '客官，请留下对小贰的建议',
     place: '限150字...',
+    pla: '是否确认退出登录',
     hidden: true,
+    hid: true,
     user: [],
     avatar: '',
+  }
+
+  componentDidShow() {
+    Fetch(`/user`, {}, 'GET')
+      .then(res => {
+        if (res.data) {
+          this.setState({ user: res.data })
+        }
+      })
   }
 
   componentDidMount() {
@@ -31,27 +43,52 @@ export default class index extends Component {
       url: '/pages/Favourites/index'
     })
   }
+
   tolists() {
     Taro.navigateTo({
       url: '/pages/Lists/index'
     })
   }
+
   touserinfo() {
     Taro.navigateTo({
       url: '/pages/changeUserinfo/index'
     })
   }
 
-  showModal = () => {
-    const ifHidden = this.state.hidden
-    const Hidden = !ifHidden
-    this.setState({ hidden: Hidden })
+  onPullDownRefresh() {
+    Taro.showNavigationBarLoading();
+    Fetch(`/user`, {}, 'GET')
+      .then(res => {
+        if (res.data) {
+          this.setState({ user: res.data })
+          Taro.stopPullDownRefresh();
+          Taro.hideNavigationBarLoading();
+        }
+      })
   }
 
   changeHidden = () => {
     const ifHidden = this.state.hidden
     const Hidden = !ifHidden
     this.setState({ hidden: Hidden })
+  }
+
+  changeHid = () => {
+    const ifHid = this.state.hid
+    const Hid = !ifHid
+    this.setState({ hid: Hid })
+  }
+
+  relogin = () => {
+    Taro.clearStorageSync()
+    Taro.showToast({
+      icon: 'loading',
+      title: '退出登录成功'
+    });
+    Taro.redirectTo({
+      url: '/pages/Login/index'
+    })
   }
 
   render() {
@@ -80,8 +117,10 @@ export default class index extends Component {
           <Image src={favorite} className='Homepage_img'></Image>
           <Text>我收藏的</Text>
         </View>
-        <View className='Homepage_feedback' onClick={this.showModal}>意见反馈</View>
+        <View className='Homepage_feedback' onClick={this.changeHidden}>意见反馈</View>
+        <View onClick={this.changeHid} className='Homepage_relogin'>退出登录</View>
         <Modal3 hidden={this.state.hidden} changeHidden={this.changeHidden} text={this.state.text} place={this.state.place} />
+        <Modal5 hidden={this.state.hid} place={this.state.pla} changeHid={this.changeHid} relogin={this.relogin} />
       </View>
     )
   }
