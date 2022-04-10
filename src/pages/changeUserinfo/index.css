@@ -99,3 +99,13 @@ Page {
   color: #6868f8;
   font-size: 30px;
 }
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+}
+.hiddenCanvas {
+  position: fixed;
+  top: 9999rpx; /*把canvas移出屏幕*/
+}

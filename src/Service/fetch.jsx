@@ -6,8 +6,8 @@ const Fetch = (url, data = {}, method = 'GET') => {
   const header = {
     'content-type': 'application/json',
     token: Taro.getStorageSync('token')
-   };
-   
+  };
+
   return Taro.request({
     url: preHttp + url,
     data,
@@ -24,7 +24,7 @@ const Fetch = (url, data = {}, method = 'GET') => {
       case 400:
         throw new Error('没有权限访问');
       case 401:
-        throw new Error('未授权');
+        return res.data;
       case 404:
         throw new Error('not found');
       case 500:

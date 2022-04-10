@@ -148,7 +148,7 @@ export default class Index extends Component {
     return (
       <View>
         <View className='search-header'>
-          <Image src={back} style={{ width: 20, height: 20, marginLeft: 10 }} onClick={this.handleBack} />
+          {/* <Image src={back} style={{ width: 20, height: 20, marginLeft: 10 }} onClick={this.handleBack} /> */}
           <Input type='text' placeholder='' value={inputVal} onInput={this.onInput.bind(this)} focus />
           <Image src={image} style={{ width: 32, height: 32 }} onClick={this.handleConfirm} />
         </View>

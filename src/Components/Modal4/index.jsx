@@ -77,6 +77,9 @@ export default class Index extends Component {
             icon: 'none',
             title: '发布成功'
           });
+          Taro.reLaunch({
+            url:'/pages/Square/Square'
+          })
         })
     } else {
       Taro.showToast({

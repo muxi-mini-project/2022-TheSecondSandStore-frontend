@@ -6,7 +6,7 @@ import Fetch from '../../Service/fetch'
 import favorite from '../../Images/favorite.png'
 import favorited from '../../Images/favorited.png'
 import back from '../../Images/back.png'
-import Modal from '../../Components/Modal1'
+import Modal1 from '../../Components/Modal1'
 
 export default class Index extends Component {
 
@@ -142,8 +142,8 @@ export default class Index extends Component {
     return (
       <View>
         <View className='top'>
-          <Image src={back} style={{ width: 20, height: 20, marginLeft: 20 }} onClick={this.handleBack} />
-          <Image src={iffavorite ? favorited : favorite} className='favorite' style={{ width: 22, height: 22, marginLeft: 290 }} onClick={this.handlefavorite} ></Image>
+          {/* <Image src={back} style={{ width: 20, height: 20, marginLeft: 20 }} onClick={this.handleBack} /> */}
+          <Image src={iffavorite ? favorited : favorite} className='favorite' style={{ width: 22, height: 22, marginLeft: 320 }} onClick={this.handlefavorite} ></Image>
         </View>
         <View className='header'>
           <View className='avater'>
@@ -176,7 +176,7 @@ export default class Index extends Component {
               ></Image>
             </View> */}
           <Button onClick={this.showModal} >我想要</Button>
-          <Modal hidden={hidden} place={place} QQ={QQ} changeHidden={this.changeHidden} />
+          <Modal1 hidden={hidden} place={place} QQ={QQ} changeHidden={this.changeHidden} />
         </View>
       </View>
     )

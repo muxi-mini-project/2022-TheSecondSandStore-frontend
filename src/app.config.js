@@ -9,7 +9,7 @@ export default ({
     'pages/changeUserinfo/index',
     'pages/Favourites/index',
     'pages/Lists/index',
-    'pages/Tags/index',
+    // 'pages/Tags/index',
   ],
   window: {
     backgroundTextStyle: 'dark',
